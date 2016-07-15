@@ -103,6 +103,13 @@ public class ServiceAgent extends Agent {
 	// l'action annoncer
 	private boolean annonced;
 
+	// variables contenant l'evenement et l'action de l'agent service
+	private String event;
+	private String dstAction;
+
+	// type de l'interface requise ou fournis
+	private InterfaceType serviceType;
+
 	// Constructor ServiceAgent
 	public ServiceAgent(String id, InstanceAgent parent) {
 		this.annonced = false;
@@ -182,8 +189,8 @@ public class ServiceAgent extends Agent {
 	}
 
 	// constructor2
-	public ServiceAgent(String id, InstanceAgent parent, int cardinality,
-			HashSet<ServiceAgent> sAListReceivingMessages) {
+	public ServiceAgent(String id, InstanceAgent parent, int cardinality, HashSet<ServiceAgent> sAListReceivingMessages,
+			InterfaceType serviceType) {
 		this.annonced = false;
 		this.id = id;
 		this.instanceAgent = parent;
@@ -211,12 +218,61 @@ public class ServiceAgent extends Agent {
 		this.isConnected = new Pair<Boolean, ArrayList<ServiceAgent>>(false, new ArrayList<ServiceAgent>());
 		this.serviceAgentMessages = new ArrayList<ServiceAgentMessage>();
 		this.sAListReceivingMessages = sAListReceivingMessages;
+		this.serviceType = serviceType;
+
+	}
+
+	// constructor3
+	public ServiceAgent(String id, InstanceAgent parent, int cardinality, HashSet<ServiceAgent> sAListReceivingMessages,
+			String event, String dstAction, InterfaceType serviceType) {
+		this.event = event;
+		this.dstAction = dstAction;
+		this.annonced = false;
+		this.id = id;
+		this.instanceAgent = parent;
+		this.contextAgents = new ArrayList<ContextAgent>();
+		this.nbOfConnectionAndAverageTime = new HashMap<String, Pair<Integer, Double>>();
+		// this.messagesBox = new PriorityQueue<MessageAgent>();
+		choosenActions = new ArrayList<ArrayList<ContextAgentProposition>>();
+		lastMessage = null;
+		// this.contextAgentPropositions = new HashMap<String, Action>();
+		this.contextPropositions = new ArrayList<ContextAgentProposition>();
+		listProp = new HashMap<ServiceAgentMessage, ArrayList<ContextAgentProposition>>();
+		messageBox = (IMsgBox<AbstractMessage>) AgentMessaging.getMsgBox(id, AbstractMessage.class);
+		// msgBoxHAgent = new SAMsgBoxHistoryAgent(this);
+		// this.listPropSorted = new HashMap<ServiceAgentMessage,
+		// Pair<ArrayList<ContextAgentProposition>,ArrayList<ContextAgentProposition>>>();
+		this.listContextAgentNonSelected = new ArrayList<ArrayList<ContextAgentProposition>>();
+		this.listOfSAMNoProposition = new ArrayList<ServiceAgentMessage>();
+		// this.setOfAllActions = new HashSet<Action>();
+		this.nbLink = 0;
+		// we can not modify this with a global evaluation
+		this.confidence = ServiceAgent.RECOMPENSE;
+		this.actionsChoosedByItSelf = new ArrayList<ArrayList<ContextAgentProposition>>();
+		this.cardinality = 1;
+		this.serviceAgentBrodcastList = new ArrayList<ServiceAgent>();
+		this.isConnected = new Pair<Boolean, ArrayList<ServiceAgent>>(false, new ArrayList<ServiceAgent>());
+		this.serviceAgentMessages = new ArrayList<ServiceAgentMessage>();
+		this.sAListReceivingMessages = sAListReceivingMessages;
+		this.serviceType = serviceType;
 
 	}
 	// Acessors
 
 	public int getCountIdContextAgents() {
 		return countIdContextAgents;
+	}
+
+	public InterfaceType getInterfaceType() {
+		return interfaceType;
+	}
+
+	public String getEvent() {
+		return event;
+	}
+
+	public String getDstAction() {
+		return dstAction;
 	}
 
 	public HashSet<ServiceAgent> getsAListReceivingMessages() {
@@ -622,9 +678,10 @@ public class ServiceAgent extends Agent {
 				// tester uniquement == car impossible que localNbLink >
 				// this.cardinality
 				isConnectionRemain = !(localNbLink >= this.cardinality);
-				/*if (localNbLink >= this.cardinality) {
-					isConnectionRemain = false;
-				}*/
+				/*
+				 * if (localNbLink >= this.cardinality) { isConnectionRemain =
+				 * false; }
+				 */
 				switch (action) {
 				case ANNONCER:
 					cap = new ContextAgentProposition(null, Action.REPONDRE, sAM);
@@ -1499,6 +1556,18 @@ public class ServiceAgent extends Agent {
 			}
 
 			senderSAM.getServiceAgent().setConnectedAgentsList(senderConnectedAgents);
+			// la connexion reelle a travers wcomp
+			//ServiceAgent testSA = senderSAM.getServiceAgent();
+			if (this.serviceType == InterfaceType.PROVIDED){
+				
+				this.instanceAgent.getAgentsConnectionToUPnP().doPhysicConnection(this, senderSAM.getServiceAgent(),
+						this.instanceAgent.getContainer());
+			} else {
+				
+				this.instanceAgent.getAgentsConnectionToUPnP().doPhysicConnection(senderSAM.getServiceAgent(), this,
+						this.instanceAgent.getContainer());
+			}
+			
 
 			// fin mise à jour
 			this.messageBox.send(sAM, serviceAgentRef);

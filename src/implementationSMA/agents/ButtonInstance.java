@@ -1,8 +1,12 @@
 package implementationSMA.agents;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import com.irit.upnp.ContainerWComp;
+
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
+import implementationSMA.enumeration.InterfaceType;
 
 public class ButtonInstance extends InstanceAgent {
 
@@ -18,8 +22,9 @@ public class ButtonInstance extends InstanceAgent {
 	 * @param id
 	 * @param routage
 	 */
-	public ButtonInstance(String id, Routage routage, String idServiceAgent, HashSet<ServiceAgent> hashSet) {
-		super(id, routage);
+	public ButtonInstance(String id, Routage routage, String idServiceAgent, HashSet<ServiceAgent> hashSet,
+			AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
+		super(id, routage, agentsConnectionToUPnP, container);
 		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.routage = routage;
@@ -27,7 +32,17 @@ public class ButtonInstance extends InstanceAgent {
 		this.idServiceAgent = idServiceAgent;
 		this.hashSet = hashSet;
 		this.createButtonsAgents();
+		// this.agentsConnectionToUPnP = agentsConnectionToUPnP;
+		// this.container = container;
 		// this.type = "Bouton";
+	}
+
+	public ContainerWComp getContainer() {
+		return container;
+	}
+
+	public AgentsConnectionToUPnP getAgentsConnectionToUPnP() {
+		return agentsConnectionToUPnP;
 	}
 
 	/**
@@ -35,7 +50,16 @@ public class ButtonInstance extends InstanceAgent {
 	 */
 	private void createButtonsAgents() {
 		// TODO Auto-generated method stub
-		ServiceAgent button = new ServiceAgent("@" + this.idServiceAgent, this, 1, this.hashSet);
+		// un peu en dur. A changer pour rendre plus generique
+		ServiceAgent button;
+		if (this.idServiceAgent.equals("prevButton")) {
+			button = new ServiceAgent("@" + this.idServiceAgent, this, 1, this.hashSet, "Click", "Previous",
+					InterfaceType.PROVIDED);
+		} else {
+			button = new ServiceAgent("@" + this.idServiceAgent, this, 1, this.hashSet, "Click", "Next",
+					InterfaceType.PROVIDED);
+		}
+
 		this.serviceAgents.add(button);
 		// besoin pour le test: chaque bouton envoie une annonce aux interfaces
 		// de ImpressJ

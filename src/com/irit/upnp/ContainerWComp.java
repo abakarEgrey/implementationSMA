@@ -2,11 +2,20 @@ package com.irit.upnp;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+
 import org.fourthline.cling.model.types.InvalidValueException;
 
 public class ContainerWComp extends Spy{
 
 	private String serviceId;
+	
+	/**
+	 * Cette variable retournera le nom de la bean crée contenu dans le map
+	 * grace à la clé de type string retourné lors de la creation du beans
+	 */
+	private Map<String, Map<String, Object>> beanCreationIdAndMap;
+	
 	/**
 	 * Finds the controller from his friendly name.
 	 * @param _friendlyName The friendly name of the structural service.
@@ -14,8 +23,20 @@ public class ContainerWComp extends Spy{
 	public ContainerWComp(String _friendlyName){
 		super(_friendlyName);
 		serviceId="StructuralService";
+		this.beanCreationIdAndMap = new HashMap<>();
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	
+	public Map<String, Map<String, Object>> getBeanCreationIdAndMap() {
+		return beanCreationIdAndMap;
+	}
+
+
+
 	/**
 	 * Add a bean to the container. <br>
 	 * Example : createBean("light", "WComp.UPnPDevice.Light");
@@ -47,6 +68,8 @@ public class ContainerWComp extends Spy{
 				throw new ErrorContainer("To many results");
 			if(!res.get(0).getClass().getSimpleName().equals("String"))
 				throw new ErrorContainer("The return object is wrong");
+			//Ajout de la map arg et res dans le map this.beanCreationIdAndMap
+			this.beanCreationIdAndMap.put(beanName, arg);
 			
 			return (String) res.get(0);
 		} catch (InvalidValueException e) {
@@ -96,7 +119,8 @@ public class ContainerWComp extends Spy{
 				throw new ErrorContainer("To many results");
 			if(!res.get(0).getClass().getSimpleName().equals("String"))
 				throw new ErrorContainer("The return object is wrong");
-			
+			//Ajout de la map arg et res dans le map this.beanCreationIdAndMap
+			this.beanCreationIdAndMap.put((String) res.get(0), arg);
 			return (String) res.get(0);
 		} catch (InvalidValueException e) {
 			throw new ErrorContainer("Wrong value");

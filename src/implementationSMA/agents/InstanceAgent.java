@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
+import com.irit.upnp.ContainerWComp;
+
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
@@ -24,7 +26,11 @@ public class InstanceAgent extends Agent {
 	private ArrayList<AbstractMessage> messagesListToForward;
 	protected Routage routage;
 
-	// Constructor
+	
+	protected AgentsConnectionToUPnP agentsConnectionToUPnP;
+	protected ContainerWComp container;
+
+	// Constructor1
 	public InstanceAgent(String id, Routage routage) {
 		this.id = id;
 		this.messageBox = (IMsgBox<AbstractMessage>) AgentMessaging.getMsgBox(id, AbstractMessage.class);
@@ -37,11 +43,36 @@ public class InstanceAgent extends Agent {
 		// a commenter pour le moment
 		/* this.routage.addInstanceAgent(this); */
 	}
+	
+	// Constructor2
+	public InstanceAgent(String id, Routage routage, AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
+		this.id = id;
+		this.messageBox = (IMsgBox<AbstractMessage>) AgentMessaging.getMsgBox(id, AbstractMessage.class);
+		this.refInstanceAgent = this.getMessageBox().getRef();
+		this.messagesListToForward = new ArrayList<AbstractMessage>();
+		this.routage = routage;
+		this.serviceAgents = new ArrayList<ServiceAgent>();
+		this.agentsConnectionToUPnP = agentsConnectionToUPnP;
+		this.container = container;
+		// A l'instanciation d'un agent instance, il s'ajoute automatiquement à
+		// la liste des agents de la classe routage
+		// a commenter pour le moment
+		/* this.routage.addInstanceAgent(this); */
+	}
 
 	// Accessor
 
+	
 	public int getCountIdContextAgents() {
 		return countIdContextAgents;
+	}
+
+	public AgentsConnectionToUPnP getAgentsConnectionToUPnP() {
+		return agentsConnectionToUPnP;
+	}
+
+	public ContainerWComp getContainer() {
+		return container;
 	}
 
 	public IMsgBox<AbstractMessage> getMessageBox() {
