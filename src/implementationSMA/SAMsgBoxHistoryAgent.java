@@ -1,6 +1,12 @@
 package implementationSMA;
 import java.util.ArrayList;
 
+import implementationSMA.agents.Agent;
+import implementationSMA.agents.ServiceAgent;
+import implementationSMA.messages.AbstractMessage;
+import implementationSMA.messages.ContextAgentProposition;
+import implementationSMA.messages.ServiceAgentMessage;
+
 public class SAMsgBoxHistoryAgent extends Agent {
 	private ServiceAgent myServiceAgent;
 	private ArrayList<ContextAgentProposition> propositionsAC;

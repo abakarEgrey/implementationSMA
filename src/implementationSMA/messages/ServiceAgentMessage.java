@@ -1,8 +1,12 @@
-package implementationSMA;
+package implementationSMA.messages;
 import java.util.ArrayList;
 import java.util.List;
 
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.Pair;
+import implementationSMA.agents.ServiceAgent;
+import implementationSMA.enumeration.Action;
+import implementationSMA.enumeration.MessageType;
 
 public class ServiceAgentMessage extends AbstractMessage {
 
@@ -142,7 +146,7 @@ public class ServiceAgentMessage extends AbstractMessage {
 		System.out.println("messageType : " + this.messageType);
 		System.out.print("serviceAgentState : (" + this.serviceAgentState.getFirst() + ", [");
 		for (ServiceAgent sA : this.serviceAgentState.getSecond()) {
-			System.out.print(sA.id + " ");
+			System.out.print(sA.getId() + " ");
 		}
 		System.out.println("] )");
 		;

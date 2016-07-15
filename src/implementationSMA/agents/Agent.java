@@ -1,4 +1,4 @@
-package implementationSMA;
+package implementationSMA.agents;
 import java.util.Set;
 
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
@@ -8,7 +8,7 @@ abstract public class Agent implements IAgentStrategy {
 	protected String id; //TODO peut être un id
 	
 //Accessors	
-	protected String getId ()
+	public String getId ()
 	{
 		return id;
 	}

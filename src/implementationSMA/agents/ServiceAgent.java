@@ -1,4 +1,5 @@
-package implementationSMA;
+package implementationSMA.agents;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,6 +12,13 @@ import java.util.Set;
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.Pair;
+import implementationSMA.enumeration.Action;
+import implementationSMA.enumeration.InterfaceType;
+import implementationSMA.enumeration.MessageType;
+import implementationSMA.messages.AbstractMessage;
+import implementationSMA.messages.ContextAgentProposition;
+import implementationSMA.messages.ServiceAgentMessage;
 
 public class ServiceAgent extends Agent {
 	// Properties
@@ -18,10 +26,12 @@ public class ServiceAgent extends Agent {
 	private static final double defaultAverageTime = 0;
 	private static final int defaultNbOfConnection = 0;
 	private static int CountContextAgents = 0;
+
 	// parametres permettant de d'effectuer la normalisation de la valeur de
 	// confiance de l'agent service
 	private static final int MIN_VALUE = 0;
 	private static final int MAX_VALUE = 1;
+
 	private Pair<Boolean, ArrayList<ServiceAgent>> isConnected;
 
 	//
@@ -611,9 +621,10 @@ public class ServiceAgent extends Agent {
 				// pour tester, j'utilise le >=, il faut modifier le code pour
 				// tester uniquement == car impossible que localNbLink >
 				// this.cardinality
-				if (localNbLink >= this.cardinality) {
+				isConnectionRemain = !(localNbLink >= this.cardinality);
+				/*if (localNbLink >= this.cardinality) {
 					isConnectionRemain = false;
-				}
+				}*/
 				switch (action) {
 				case ANNONCER:
 					cap = new ContextAgentProposition(null, Action.REPONDRE, sAM);
@@ -663,11 +674,11 @@ public class ServiceAgent extends Agent {
 					// connectées celui a envoyé le message
 					this.isConnected.setFirst(true);
 					ArrayList<ServiceAgent> listSAConnected = this.isConnected.getSecond();
-					
-					if (!listSAConnected.contains(sAM.getServiceAgent())){
+
+					if (!listSAConnected.contains(sAM.getServiceAgent())) {
 						listSAConnected.add(sAM.getServiceAgent());
 					}
-					
+
 					this.isConnected.setSecond(listSAConnected);
 					// construire la proposition du message
 					cap = new ContextAgentProposition(null, Action.NERIENFAIRE, sAM);
@@ -958,7 +969,8 @@ public class ServiceAgent extends Agent {
 		}
 		// si la confiance du service agent qui propose l'action > a celui ayant
 		// la plus petite valeur de confiance
-		// on regarde ici si l'agent contexte a proposé son action suite à un message.
+		// on regarde ici si l'agent contexte a proposé son action suite à un
+		// message.
 		if (cAA.get(taille).getServiceAgentMessage() != null) {
 			if (cAA.get(taille).getServiceAgentMessage().getServiceAgent().getConfidence() > sAConnected.get(0)
 					.getConfidence()) {
@@ -981,7 +993,8 @@ public class ServiceAgent extends Agent {
 					// cAA.get(taille).getServiceAgentMessage().getServiceAgent()
 					sAM.setActionType(Action.SECONNECTERPHYSIQUEMENT);
 					this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-					// ajout à la liste des agents connectés provisoirement. gerer
+					// ajout à la liste des agents connectés provisoirement.
+					// gerer
 					// le conflit ou le deuxieme à ejouter a une confiance plus
 					// elevée que le premier ajouté et il existe une seule palce
 					// completer eventuellement
@@ -995,8 +1008,10 @@ public class ServiceAgent extends Agent {
 						this.messageBox.send(sAM, sAConnected.get(0).getRefBox());
 
 					} else if (sAM.getActionType() == Action.REPONDRE) {
-						// amelioration possible de l'ambiguité entre seconnecter et
-						// seconnecterphysiquement et repondre pour l'incrémentation
+						// amelioration possible de l'ambiguité entre
+						// seconnecter et
+						// seconnecterphysiquement et repondre pour
+						// l'incrémentation
 						// du nombre des liens ...
 						sAM.setActionType(Action.SECONNECTER);
 						this.messageBox.send(sAM, sAConnected.get(0).getRefBox());
@@ -1016,9 +1031,9 @@ public class ServiceAgent extends Agent {
 				}
 				/*
 				 * if (cAA.get(0).getContextAgent() != null) { // feedback to
-				 * context agents // give feedbacks for all agents contexts are //
-				 * proposed this action for (ContextAgentProposition cAP : cAA) {
-				 * cAP.getContextAgent().setFeedBack(1); } }
+				 * context agents // give feedbacks for all agents contexts are
+				 * // proposed this action for (ContextAgentProposition cAP :
+				 * cAA) { cAP.getContextAgent().setFeedBack(1); } }
 				 */
 
 			} else {
@@ -1029,21 +1044,21 @@ public class ServiceAgent extends Agent {
 				this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
 				// recompense negative des agents services
 				/*
-				 * if (cAA.get(0).getContextAgent() == null) { // neagtive feedback
-				 * because the action proposed by // context agents is not choosed
-				 * for (ContextAgentProposition cAP : cAA) {
+				 * if (cAA.get(0).getContextAgent() == null) { // neagtive
+				 * feedback because the action proposed by // context agents is
+				 * not choosed for (ContextAgentProposition cAP : cAA) {
 				 * cAP.getContextAgent().setFeedBack(0);
 				 * 
 				 * } }
 				 */
 			}
-			
+
 		} else {
-			//ignorer la proposition si l'agent service est connecté au mieux
-			//ne rien faire pour le moment. ca peut évoluer
-			
+			// ignorer la proposition si l'agent service est connecté au mieux
+			// ne rien faire pour le moment. ca peut évoluer
+
 		}
-		
+
 		return new Pair<Boolean, Action>(actionProposedByCAIsChoosed, action);
 	}
 
@@ -1466,10 +1481,10 @@ public class ServiceAgent extends Agent {
 			// ajout de l'agent service à la liste des agents connectés
 			ServiceAgent localServiceAgent = cAA.get(0).getServiceAgentMessage().getServiceAgent();
 			connectedSA = this.isConnected.getSecond();
-			if (!connectedSA.contains(localServiceAgent)){
+			if (!connectedSA.contains(localServiceAgent)) {
 				connectedSA.add(localServiceAgent);
 			}
-			
+
 			this.isConnected.setFirst(true);
 			this.isConnected.setSecond(connectedSA);
 
@@ -1478,14 +1493,13 @@ public class ServiceAgent extends Agent {
 			senderSAM.getServiceAgent().setState(true);
 			ArrayList<ServiceAgent> senderConnectedAgents = new ArrayList<ServiceAgent>();
 			senderConnectedAgents = senderSAM.getServiceAgent().getConnectedAgents();
-			if (!senderConnectedAgents.contains(this)){
+			if (!senderConnectedAgents.contains(this)) {
 				senderConnectedAgents.add(this);
 				senderSAM.getServiceAgent().incrementNbLink();
 			}
-			
+
 			senderSAM.getServiceAgent().setConnectedAgentsList(senderConnectedAgents);
-			
-			
+
 			// fin mise à jour
 			this.messageBox.send(sAM, serviceAgentRef);
 			break;

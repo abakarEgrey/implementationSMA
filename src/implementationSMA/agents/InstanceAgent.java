@@ -1,4 +1,4 @@
-package implementationSMA;
+package implementationSMA.agents;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +7,8 @@ import java.util.Set;
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.Pair;
+import implementationSMA.messages.AbstractMessage;
 
 public class InstanceAgent extends Agent {
 	// Properties

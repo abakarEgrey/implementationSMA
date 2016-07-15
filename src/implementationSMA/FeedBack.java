@@ -1,5 +1,7 @@
 package implementationSMA;
 
+import implementationSMA.messages.ContextAgentProposition;
+
 public class FeedBack {
 	//this value is 0 or 1
 	private int feedBackValue;

@@ -5,5 +5,9 @@
 	<classpathentry kind="src" path="/agent-scheduling"/>
 	<classpathentry kind="src" path="/agent-messaging"/>
 	<classpathentry kind="src" path="/avt"/>
+	<classpathentry kind="lib" path="C:/Users/amahamat/.m2/repository/org/seamless/seamless-xml/1.1.1/seamless-xml-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amahamat/.m2/repository/org/seamless/seamless-util/1.1.1/seamless-util-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amahamat/.m2/repository/org/seamless/seamless-http/1.1.1/seamless-http-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/amahamat/.m2/repository/org/fourthline/cling/cling-core/2.1.0/cling-core-2.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

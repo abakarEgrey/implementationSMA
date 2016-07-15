@@ -1,4 +1,9 @@
-package implementationSMA;
+package implementationSMA.messages;
+
+import implementationSMA.agents.ContextAgent;
+import implementationSMA.enumeration.Action;
+import implementationSMA.enumeration.MessageType;
+
 public class ContextAgentProposition extends AbstractMessage {
 	/**
 	 * This class allows to get informations context agents proposals

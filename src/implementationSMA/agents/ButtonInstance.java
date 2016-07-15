@@ -1,4 +1,4 @@
-package implementationSMA;
+package implementationSMA.agents;
 import java.util.ArrayList;
 import java.util.HashSet;
 

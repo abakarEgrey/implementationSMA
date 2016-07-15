@@ -1,4 +1,4 @@
-package implementationSMA;
+package implementationSMA.agents;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -6,6 +6,11 @@ import java.util.Set;
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.Pair;
+import implementationSMA.enumeration.Action;
+import implementationSMA.messages.AbstractMessage;
+import implementationSMA.messages.ContextAgentProposition;
+import implementationSMA.messages.ServiceAgentMessage;
 
 public class ContextAgent extends Agent {
 	// TODO General TODO: make criterion variables?
