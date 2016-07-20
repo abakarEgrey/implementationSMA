@@ -46,7 +46,7 @@ public class SAMsgBoxHistoryAgent extends Agent {
 	}
 
 	@Override
-	protected void perceive() {
+	public void perceive() {
 		// TODO Auto-generated method stub
 
 	}

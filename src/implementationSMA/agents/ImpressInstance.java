@@ -16,7 +16,6 @@ public class ImpressInstance extends InstanceAgent {
 	// pour le test
 	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
 
-	
 	// private ArrayList<ServiceAgent> serviceAgentList = new
 	// ArrayList<ServiceAgent>();
 	/**
@@ -33,8 +32,8 @@ public class ImpressInstance extends InstanceAgent {
 		this.type = "ImpressJ";
 		this.createImpressAgents();
 		this.hashSet = hashSet;
-		//this.agentsConnectionToUPnP = agentsConnectionToUPnP;
-		//this.container = container;
+		// this.agentsConnectionToUPnP = agentsConnectionToUPnP;
+		// this.container = container;
 	}
 
 	public ContainerWComp getContainer() {
@@ -54,7 +53,8 @@ public class ImpressInstance extends InstanceAgent {
 		// lisisbilité du code
 		ServiceAgent prevSlideRequired = new ServiceAgent("@prevSlideRequired", this, 1, this.hashSet, "Click",
 				"Previous", InterfaceType.REQUIRED);
-		ServiceAgent nextSlideRequired = new ServiceAgent("@nextSlideRequired", this, 1, this.hashSet, "Click", "Next", InterfaceType.REQUIRED);
+		ServiceAgent nextSlideRequired = new ServiceAgent("@nextSlideRequired", this, 1, this.hashSet, "Click", "Next",
+				InterfaceType.REQUIRED);
 
 		this.serviceAgents.add(prevSlideRequired);
 		this.serviceAgents.add(nextSlideRequired);

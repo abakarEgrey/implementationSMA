@@ -1,4 +1,5 @@
 package implementationSMA.agents;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,6 @@ public class InstanceAgent extends Agent {
 	private ArrayList<AbstractMessage> messagesListToForward;
 	protected Routage routage;
 
-	
 	protected AgentsConnectionToUPnP agentsConnectionToUPnP;
 	protected ContainerWComp container;
 
@@ -43,9 +43,10 @@ public class InstanceAgent extends Agent {
 		// a commenter pour le moment
 		/* this.routage.addInstanceAgent(this); */
 	}
-	
+
 	// Constructor2
-	public InstanceAgent(String id, Routage routage, AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
+	public InstanceAgent(String id, Routage routage, AgentsConnectionToUPnP agentsConnectionToUPnP,
+			ContainerWComp container) {
 		this.id = id;
 		this.messageBox = (IMsgBox<AbstractMessage>) AgentMessaging.getMsgBox(id, AbstractMessage.class);
 		this.refInstanceAgent = this.getMessageBox().getRef();
@@ -62,7 +63,6 @@ public class InstanceAgent extends Agent {
 
 	// Accessor
 
-	
 	public int getCountIdContextAgents() {
 		return countIdContextAgents;
 	}
@@ -93,7 +93,7 @@ public class InstanceAgent extends Agent {
 
 	// Life Cycle
 	@Override
-	protected void perceive() {
+	public void perceive() {
 		// TODO Auto-generated method stub
 		System.out.println("perceiveInstance: je suis executé");
 		this.messagesListToForward = (ArrayList<AbstractMessage>) this.messageBox.getMsgs();
@@ -116,6 +116,11 @@ public class InstanceAgent extends Agent {
 			this.messageBox.send(am, this.routage.getRefRoutage());
 		}
 
+	}
+
+	public void decideAndAct() {
+		decide();
+		act();
 	}
 
 	@Override
@@ -265,4 +270,14 @@ public class InstanceAgent extends Agent {
 		this.serviceAgents.clear();
 	}
 
+	/**
+	 * Cette méthode est invoquée lorsque le composant diparait. Elle est
+	 * rédefinie par les claases qui implémente cette classe
+	 * 
+	 * @return
+	 */
+	public boolean disappear() {
+		return false;
+
+	}
 }

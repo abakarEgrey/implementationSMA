@@ -5,8 +5,15 @@ import java.util.HashSet;
 
 import com.irit.upnp.ContainerWComp;
 
+import exceptions.RemovedLink;
+import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
+import implementationSMA.Pair;
+import implementationSMA.enumeration.Action;
 import implementationSMA.enumeration.InterfaceType;
+import implementationSMA.enumeration.MessageType;
+import implementationSMA.messages.AbstractMessage;
+import implementationSMA.messages.ServiceAgentMessage;
 
 public class ButtonInstance extends InstanceAgent {
 
@@ -16,6 +23,8 @@ public class ButtonInstance extends InstanceAgent {
 	private String idServiceAgent;
 	// pour le test
 	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
+
+	private AgentsConnectionToUPnP agentsConnectionToUPnP;
 
 	/**
 	 * 
@@ -32,6 +41,7 @@ public class ButtonInstance extends InstanceAgent {
 		this.idServiceAgent = idServiceAgent;
 		this.hashSet = hashSet;
 		this.createButtonsAgents();
+		this.agentsConnectionToUPnP = agentsConnectionToUPnP;
 		// this.agentsConnectionToUPnP = agentsConnectionToUPnP;
 		// this.container = container;
 		// this.type = "Bouton";
@@ -94,6 +104,61 @@ public class ButtonInstance extends InstanceAgent {
 	 */
 	public ArrayList<ServiceAgent> getServiceAgentList() {
 		return this.serviceAgents;
+	}
+
+	/**
+	 * Redefinition de cette méthode. Elle fait disparaitre le composant
+	 */
+	public boolean disappear() {
+
+		/**
+		 * Le composant envoie le message sedeconnecter à tous les agents avec
+		 * qui il est connecté
+		 */
+		for (ServiceAgent sA : this.serviceAgents) {
+			if (!sA.getConnectedAgents().isEmpty()) {
+				seDeconnecter(sA);
+				// vider la liste des agents connectés
+				sA.getConnectedAgents().clear();
+			}
+
+		}
+
+		return true;
+
+	}
+
+	/**
+	 * 
+	 * @param sATriggingDeconnection
+	 */
+	private void seDeconnecter(ServiceAgent sATriggingDeconnection) {
+		// TODO Auto-generated method stub
+
+		IMsgBox<AbstractMessage> messageBox = sATriggingDeconnection.getMessageBox();
+		ArrayList<ServiceAgent> sAConnected = sATriggingDeconnection.getConnectedAgents();
+		for (ServiceAgent serviceAgent : sAConnected) {
+
+			ServiceAgentMessage sAM = new ServiceAgentMessage(sATriggingDeconnection.getCardinality(),
+					sATriggingDeconnection.getInstanceAgent().getType().toString(), MessageType.SAMESSAGE,
+					sATriggingDeconnection.getCurrentServiceState(),
+					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId())
+							.getFirst(),
+					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId())
+							.getSecond(),
+					sATriggingDeconnection, Action.SEDECONNECTER);
+
+			messageBox.send(sAM, serviceAgent.getRefBox());
+			try {
+				this.agentsConnectionToUPnP.removePhysicConnection(sATriggingDeconnection, serviceAgent, container);
+			} catch (RemovedLink e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			sATriggingDeconnection.decrementNbLink();
+		}
+		// sAConnected.clear();
+
 	}
 
 }

@@ -57,7 +57,7 @@ public class Routage extends Agent {
 	}
 
 	@Override
-	protected void perceive() {
+	public void perceive() {
 		// TODO Auto-generated method stub
 		// get messages from messageBox
 		this.messagesInBox = new HashSet<AbstractMessage>(
@@ -83,7 +83,13 @@ public class Routage extends Agent {
 		}
 
 	}
-
+	/**
+	 * 
+	 */
+	public  void decideAndAct(){
+		decide();
+		act();
+	}
 	@Override
 	public void delete() {
 		// TODO Auto-generated method stub

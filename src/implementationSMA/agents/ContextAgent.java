@@ -1,4 +1,5 @@
 package implementationSMA.agents;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class ContextAgent extends Agent {
 	private ArrayList<ServiceAgentMessage> listValidatingSAMessage;
 	private IMsgBox<AbstractMessage> messageBox;
 	private Ref<AbstractMessage> refAgentService;
-	
+
 	// private int feedBack;
 
 	// Constructor
@@ -212,9 +213,11 @@ public class ContextAgent extends Agent {
 	}
 
 	@Override
-	protected void perceive() {
+	public void perceive() {
 		// New cycle, e
 		System.out.println("perceive: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
+		this.serviceAgent.getPile()
+				.empiler("perceive: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		isValid = false;
 		listValidatingSAMessage.clear();
 		// validité de l'agent contexte lorsque l'agent service effectue une
@@ -270,6 +273,8 @@ public class ContextAgent extends Agent {
 
 		}
 		System.out.println("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		this.serviceAgent.getPile()
+				.empiler("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 
 	private boolean isSenderTypeAndMessageTypeValid() {
@@ -285,18 +290,23 @@ public class ContextAgent extends Agent {
 	@Override
 	protected void decide() {
 		System.out.println("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
+		this.serviceAgent.getPile()
+				.empiler("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		// A contextAgent may be valid for multiple messages, for all those
 		// messages he will send a proposition to its service agent
 		// No real decision
 
 		System.out.println("decide : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		this.serviceAgent.getPile().empiler("decide : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 
 	@Override
 	protected void act() {
 		System.out.println("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
+		this.serviceAgent.getPile().empiler("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		if (isValid) {
 			System.out.println(this.getId() + "je suis valide ");
+			this.serviceAgent.getPile().empiler(this.getId() + "je suis valide ");
 			if (listValidatingSAMessage.isEmpty()) {
 				// TODO serviceAgentMessage est null car l'agent contexte ne
 				// repond a aucun message. Il faut tester le service agent
@@ -314,10 +324,18 @@ public class ContextAgent extends Agent {
 			}
 		} else {
 			System.out.println(this.getId() + "je suis invalide ");
+			this.serviceAgent.getPile().empiler(this.getId() + "je suis invalide ");
 		}
 		System.out.println("act : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		this.serviceAgent.getPile().empiler("act : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
-
+	/**
+	 * 
+	 */
+	public  void decideAndAct(){
+		decide();
+		act();
+	}
 	@Override
 	public void delete() {
 		// TODO Auto-generated method stub
@@ -340,7 +358,8 @@ public class ContextAgent extends Agent {
 		}
 		return actualNeighboursState;
 	}
-	//pour l'ancienne méthode qui regargde l'etat des agents services voisins
+
+	// pour l'ancienne méthode qui regargde l'etat des agents services voisins
 	private ArrayList<Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>> getActualNeighboursState() {
 		ArrayList<Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>> actualNeighboursState = this.serviceAgent
 				.getActualNeighboursState();
@@ -353,7 +372,7 @@ public class ContextAgent extends Agent {
 		}
 		return actualNeighboursState;
 	}
-	
+
 	private ArrayList<ServiceAgent> getConnectedAgents() {
 		return serviceAgent.getConnectedAgents();
 	}
@@ -370,12 +389,14 @@ public class ContextAgent extends Agent {
 	 */
 	private boolean isBasicCriterionValid(Pair<Boolean, ArrayList<ServiceAgent>> _actualServiceAgentState) {
 		// Validity of the connection range of the context agent
-		//je commente le test pour voir si l'agent est connecté ou pas
-		/*if (!(((serviceAgentState.getFirst() && _actualServiceAgentState.getFirst())
-				|| ((!serviceAgentState.getFirst() && (!_actualServiceAgentState.getFirst())))))) {
-			// TODO may need to be changed if bool can become either
-			return false;
-		}*/
+		// je commente le test pour voir si l'agent est connecté ou pas
+		/*
+		 * if (!(((serviceAgentState.getFirst() &&
+		 * _actualServiceAgentState.getFirst()) ||
+		 * ((!serviceAgentState.getFirst() &&
+		 * (!_actualServiceAgentState.getFirst())))))) { // TODO may need to be
+		 * changed if bool can become either return false; }
+		 */
 
 		// Check if one of the connection is correlated with the type range
 		// if
@@ -432,34 +453,20 @@ public class ContextAgent extends Agent {
 
 		// for (ArrayList<Pair<Boolean, ServiceAgent>> actualNState :
 		// _actualNeighboursState)
-		/*for (int i = 0; i < _actualNeighboursState.size(); i++) {
-			Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>> actualNState = _actualNeighboursState.get(i);
-			// boolean sameInstance;
-
-			if (neightboursState.get(i).getFirst()) {
-				isV = false;
-				for (Pair<Boolean, ServiceAgent> connectedSA : actualNState) {
-					if (connectedSA.getSecond().equals(sender)) {
-						isV = true;
-						break;
-					}
-				}
-				if (!isV) {
-					break;
-				}
-			} else {
-				isV = true;
-				for (Pair<Boolean, ServiceAgent> connectedSA : actualNState) {
-					if (connectedSA.getSecond().equals(sender)) {
-						isV = false;
-						break;
-					}
-				}
-				if (!isV) {
-					break;
-				}
-			}
-		}*/
+		/*
+		 * for (int i = 0; i < _actualNeighboursState.size(); i++) {
+		 * Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>
+		 * actualNState = _actualNeighboursState.get(i); // boolean
+		 * sameInstance;
+		 * 
+		 * if (neightboursState.get(i).getFirst()) { isV = false; for
+		 * (Pair<Boolean, ServiceAgent> connectedSA : actualNState) { if
+		 * (connectedSA.getSecond().equals(sender)) { isV = true; break; } } if
+		 * (!isV) { break; } } else { isV = true; for (Pair<Boolean,
+		 * ServiceAgent> connectedSA : actualNState) { if
+		 * (connectedSA.getSecond().equals(sender)) { isV = false; break; } } if
+		 * (!isV) { break; } } }
+		 */
 
 		return isV;
 	}
@@ -493,13 +500,15 @@ public class ContextAgent extends Agent {
 		}
 		return isV;
 	}
-	//...
-	private boolean isNeighboursStateValid(ArrayList<Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>> _actualNeighboursState) {
+
+	// ...
+	private boolean isNeighboursStateValid(
+			ArrayList<Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>> _actualNeighboursState) {
 
 		boolean isV = true;
 		if (!_actualNeighboursState.isEmpty()) {
 			if (_actualNeighboursState.size() == neightboursState.size()) {
-				//ArrayList<Pair<Boolean, ServiceAgent>> actualNState;
+				// ArrayList<Pair<Boolean, ServiceAgent>> actualNState;
 				Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>> actualNState;
 				boolean isNeiV = false;
 
@@ -509,7 +518,7 @@ public class ContextAgent extends Agent {
 				// really is
 				for (int i = 0; i < _actualNeighboursState.size(); i++) {
 					actualNState = _actualNeighboursState.get(i);
-					//isNeiV = isNeighbourV(actualNState);
+					// isNeiV = isNeighbourV(actualNState);
 					isNeiV = (actualNState.getSecond().getFirst() == this.neightboursState.get(i).getFirst());
 					if (!isNeiV) {
 						isV = false;
@@ -637,7 +646,7 @@ public class ContextAgent extends Agent {
 		System.out.println("senderType = " + this.senderType);
 		System.out.println("messageType = " + messageType);
 		System.out.println("serviceAgentState = " + this.serviceAgentState.getFirst());
- 		System.out.println(
+		System.out.println(
 				"(*/*/*/*/*/*/*/*/*/*/*/*/*fin affichage agent contexte*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*)");
 	}
 

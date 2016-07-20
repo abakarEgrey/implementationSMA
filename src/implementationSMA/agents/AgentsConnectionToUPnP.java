@@ -14,15 +14,24 @@ import com.irit.upnp.ErrorContainer;
 import com.irit.upnp.NoDevice;
 import com.irit.upnp.NoService;
 import com.irit.upnp.NotLaunched;
+import com.irit.upnp.SpyAlreadyRunning;
 
+import exceptions.RemovedLink;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import implementationSMA.Pair;
 
 public class AgentsConnectionToUPnP {
 
 	private static Map<String, Set<ServiceAgent>> serviceAgentAndWCompBean = new HashMap<>();
+	/**
+	 * Cette structure contient les noms de 2 beans connectés et la liaison:
+	 * @Pair<String,String>: le couple de string représente les noms des beans.
+	 *                       C'est aussi la clef du map
+	 * 
+	 * @String: représente la liaison.
+	 */
+	private static Map<Pair<String, String>, String> beanNamesAndLink = new HashMap<>();
 
-	
 	/**
 	 * Cette méthode permet un accès synchronisé des agents services qui
 	 * apparaissent au cours de l'exécution
@@ -49,42 +58,57 @@ public class AgentsConnectionToUPnP {
 	 * Si le map ne contient pas l'un des agents services alors declenché une
 	 * exception sinon effectuer la connection physique
 	 * 
-	 * @param sAInitiatePhysicCoonection
+	 * @param sAInitiatePhysicConnection
 	 * @param sAAcceptingConnection
 	 */
-	public synchronized void doPhysicConnection(ServiceAgent sAInitiatePhysicCoonection,
+	public synchronized void doPhysicConnection(ServiceAgent sAInitiatePhysicConnection,
 			ServiceAgent sAAcceptingConnection, ContainerWComp container) {
 
-		/*if ((!AgentsConnectionToUPnP.serviceAgentAndWCompBean.containsKey(sAAcceptingConnection))
-				|| (!AgentsConnectionToUPnP.serviceAgentAndWCompBean.containsKey(sAAcceptingConnection))) {
-			// declencher une exeception
+		/*
+		 * if ((!AgentsConnectionToUPnP.serviceAgentAndWCompBean.containsKey(
+		 * sAAcceptingConnection)) ||
+		 * (!AgentsConnectionToUPnP.serviceAgentAndWCompBean.containsKey(
+		 * sAAcceptingConnection))) { // declencher une exeception
+		 * 
+		 * }
+		 */
+		Pair<Boolean, Pair<String, String>> resSAValidate = isServiceAgentValide(sAInitiatePhysicConnection,
+				sAAcceptingConnection);
+		if (!resSAValidate.getFirst()) {
 
-		}*/
-		Pair<Boolean, Pair<String, String>> resSAValideate = isServiceAgentValide(sAInitiatePhysicCoonection, sAAcceptingConnection);
-		if(!resSAValideate.getFirst()){
-			
 			// declencher une exeception
-		}
-		else {
-			/*String resSAInitiatePhysicConnection = AgentsConnectionToUPnP.serviceAgentAndWCompBean
-					.get(sAAcceptingConnection);
-			Map<String, Object> infoBeanSAInitiateConnection = container.getBeanCreationIdAndMap()
-					.get(resSAInitiatePhysicConnection);*/
-			
-			String beanNameSource = resSAValideate.getSecond().getFirst();
+		} else {
+			/*
+			 * String resSAInitiatePhysicConnection =
+			 * AgentsConnectionToUPnP.serviceAgentAndWCompBean
+			 * .get(sAAcceptingConnection); Map<String, Object>
+			 * infoBeanSAInitiateConnection =
+			 * container.getBeanCreationIdAndMap()
+			 * .get(resSAInitiatePhysicConnection);
+			 */
 
-			/*String resSAAcceptingConnection = AgentsConnectionToUPnP.serviceAgentAndWCompBean
-					.get(sAAcceptingConnection);
-			Map<String, Object> infoBeanSAAcceptingConnection = container.getBeanCreationIdAndMap()
-					.get(resSAAcceptingConnection);*/
-			String beanNameDestination =resSAValideate.getSecond().getSecond();
+			String beanNameSource = resSAValidate.getSecond().getFirst();
+
+			/*
+			 * String resSAAcceptingConnection =
+			 * AgentsConnectionToUPnP.serviceAgentAndWCompBean
+			 * .get(sAAcceptingConnection); Map<String, Object>
+			 * infoBeanSAAcceptingConnection =
+			 * container.getBeanCreationIdAndMap()
+			 * .get(resSAAcceptingConnection);
+			 */
+			String beanNameDestination = resSAValidate.getSecond().getSecond();
 
 			/**
 			 * effectuer la connection physique
 			 */
 			try {
-				String link = container.createLink(beanNameSource, sAInitiatePhysicCoonection.getEvent(), beanNameDestination,
-						sAInitiatePhysicCoonection.getDstAction(), "");
+				String link = container.createLink(beanNameSource, sAInitiatePhysicConnection.getEvent(),
+						beanNameDestination, sAInitiatePhysicConnection.getDstAction(), "");
+				/**
+				 * ajout dans le map de la liaison
+				 */
+				AgentsConnectionToUPnP.beanNamesAndLink.put(new Pair<>(beanNameSource, beanNameDestination), link);
 			} catch (NoDevice | ErrorContainer | NoService | NotLaunched e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,10 +154,47 @@ public class AgentsConnectionToUPnP {
 		return res;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static Map<String, Set<ServiceAgent>> getServiceAgentAndWCompBean() {
 		return serviceAgentAndWCompBean;
 	}
-	
-	
+
+	/**
+	 * Cette méthode permet de supprimer une connection physique. Cette méthode
+	 * est synchronisée
+	 */
+	public synchronized void removePhysicConnection(ServiceAgent sAInitiatePhysicConnection,
+			ServiceAgent sAAcceptingConnection, ContainerWComp container) throws RemovedLink {
+
+		Pair<Boolean, Pair<String, String>> resSAValidate = isServiceAgentValide(sAInitiatePhysicConnection,
+				sAAcceptingConnection);
+
+		if (AgentsConnectionToUPnP.beanNamesAndLink.containsKey(resSAValidate.getSecond())
+				|| AgentsConnectionToUPnP.beanNamesAndLink
+						.containsKey(new Pair<>(resSAValidate.getSecond().getSecond(), resSAValidate.getFirst()))) {
+			String link = AgentsConnectionToUPnP.beanNamesAndLink.get(resSAValidate.getSecond());
+			try {
+				container.removeLink(link);
+			} catch (NoDevice e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ErrorContainer e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoService e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NotLaunched e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			throw new RemovedLink("invocated");
+		}
+
+	}
 
 }

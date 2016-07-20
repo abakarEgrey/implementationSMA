@@ -253,7 +253,8 @@ public class Test {
 
 			System.out.println("/*====================execution du step-11   terminé================*/");
 			// finsma
-
+			boutonPred.disappear();
+			pause(100000);
 			c.stopSpy();
 
 		} catch (NoDevice e) {

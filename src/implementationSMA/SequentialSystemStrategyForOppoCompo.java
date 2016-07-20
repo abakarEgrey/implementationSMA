@@ -169,7 +169,7 @@ public class SequentialSystemStrategyForOppoCompo extends AbstractSystemStrategy
 			//execution de l'agent
 			
 			currentAgentClassName = ServiceAgent.class.getName();
-			currentAgent = AGENT.MESSAGEBOXHISTORY;
+			//currentAgent = AGENT.MESSAGEBOXHISTORY;
 			break;
 		case MESSAGEBOXHISTORY:
 			System.out.println("trace: entrez dans switch messageboxhistory et et execution de l'agent history box");

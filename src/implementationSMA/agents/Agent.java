@@ -2,9 +2,13 @@ package implementationSMA.agents;
 import java.util.Set;
 
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
+import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.ITwoStepsAgent;
+import implementationSMA.Pile;
 
-abstract public class Agent implements IAgentStrategy {
+abstract public class Agent implements IAgentStrategy, ITwoStepsAgent {
 // Properties
+	
+	
 	protected String id; //TODO peut être un id
 	
 //Accessors	
@@ -18,7 +22,7 @@ abstract public class Agent implements IAgentStrategy {
 	/*
 	 * 
 	 */
-	protected abstract void perceive();
+	public abstract void perceive();
 	
 	/*
 	 * 
@@ -37,12 +41,21 @@ abstract public class Agent implements IAgentStrategy {
 	
 	public abstract void delete();
 	
+	/**
+	 * 
+	 */
+	public  void decideAndAct(){
+		decide();
+		act();
+	}
+	
 //IAgentStrategy implementation
 	public void nextStep(){
 		System.out.println("nexteStep:" +this.getId() + " je suis executé");
  		perceive();
-		decide();
-		act();
+ 		decideAndAct();
+		//decide();
+		//act();
 	}
 	
 
