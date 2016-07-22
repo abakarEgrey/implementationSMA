@@ -104,7 +104,7 @@ public class AgentsConnectionToUPnP {
 			 */
 			try {
 				String link = container.createLink(beanNameSource, sAInitiatePhysicConnection.getEvent(),
-						beanNameDestination, sAInitiatePhysicConnection.getDstAction(), "");
+						beanNameDestination, sAAcceptingConnection.getDstAction(), "");
 				/**
 				 * ajout dans le map de la liaison
 				 */

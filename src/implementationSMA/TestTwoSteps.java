@@ -1,5 +1,8 @@
 package implementationSMA;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashSet;
 
 import com.irit.upnp.ContainerWComp;
@@ -16,6 +19,7 @@ import implementationSMA.agents.AgentsConnectionToUPnP;
 import implementationSMA.agents.ButtonInstance;
 import implementationSMA.agents.ImpressInstance;
 import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.Winamp;
 
 public class TestTwoSteps {
 
@@ -118,6 +122,53 @@ public class TestTwoSteps {
 			twoStepsForOppoCompo.doStep();
 			ServiceAgent.getPile().empiler("/*==============execution du step- terminé====================*/");
 			/*sssfoc.doStep();*/
+			boutonPred.disappear();
+			//boutonSuiv.disappear();
+			//creation et apparition de winamp
+			Winamp winampComponent = new Winamp("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
+			
+			winampComponent.getServiceAgentList().get(0).setPile(pile);
+			winampComponent.getServiceAgentList().get(1).setPile(pile);
+			
+			pause(5000);
+			String winamp = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
+			
+			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(0), "Winamp");
+			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(1), "Winamp");
+			//ajout des agents du composant winamp à la liste des agents pouvant recevoir l'annonce des agents
+			impressAgents.addAll(winampComponent.getServiceAgentList());
+			hashSet.addAll(winampComponent.getServiceAgentList());
+			twoStepsForOppoCompo.addAgents(hashSet);
+			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-6====================*/");
+			twoStepsForOppoCompo.doStep();
+			ServiceAgent.getPile().empiler("/*==============execution du step-6 terminé====================*/");
+			
+			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-7====================*/");
+			twoStepsForOppoCompo.doStep();
+			ServiceAgent.getPile().empiler("/*==============execution du step-7 terminé====================*/");
+			
+			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-8====================*/");
+			twoStepsForOppoCompo.doStep();
+			ServiceAgent.getPile().empiler("/*==============execution du step-8 terminé====================*/");
+			
+			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-8====================*/");
+			twoStepsForOppoCompo.doStep();
+			ServiceAgent.getPile().empiler("/*==============execution du step-8 terminé====================*/");
+			
+			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-9====================*/");
+			twoStepsForOppoCompo.doStep();
+			ServiceAgent.getPile().empiler("/*==============execution du step-9 terminé====================*/");
+			
+			boolean arret = true;
+			int nbIter = 0;
+			while(arret) {
+				twoStepsForOppoCompo.doStep();
+				nbIter++;
+				if (nbIter > 10){
+					arret = false;
+				}
+			}
+			
 			pause (5000);
 			//boutonPred.disappear();
 			
@@ -133,14 +184,27 @@ public class TestTwoSteps {
 			 * SequentialSystemStrategyForOppoCompo.AgentWrapper agentRapper =
 			 * sssfoc.new AgentWrapper(agent);
 			 */
-			while (!ServiceAgent.getPile().isEmpty()){
-				String strToDisplay = ServiceAgent.getPile().depiler();
-				if (!strToDisplay.contains("display")){
-					System.out.println("\t \t" + strToDisplay);
-				} else {
-					
+			try {
+				BufferedWriter out =  new BufferedWriter(new FileWriter("fichOut.txt"));
+				BufferedWriter out1 =  new BufferedWriter(new FileWriter("fichArobase.txt"));
+				while (!ServiceAgent.getPile().isEmpty()){
+					String strToDisplay = ServiceAgent.getPile().depiler();
+					if (!strToDisplay.contains("display")){
+						out.write("\t \t" + strToDisplay + "\n");
+						if (strToDisplay.startsWith("@")){
+							out1.write(strToDisplay + "\n");
+						}
+						//System.out.println("\t \t" + strToDisplay);
+					} else {
+						
+					}
 				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			
+			
 			pause(100000);
 			c.stopSpy();
 

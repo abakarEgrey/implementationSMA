@@ -1,0 +1,750 @@
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winPredButton77je suis invalide 
+@winPredButton74je suis invalide 
+@winPredButton73je suis invalide 
+@nextSlideRequired76je suis invalide 
+@winPredButton70je suis invalide 
+@nextSlideRequired75je suis invalide 
+@winPredButton69je suis invalide 
+@winPredButton68je suis invalide 
+@nextSlideRequired72je suis invalide 
+@winPredButton64je suis invalide 
+@nextSlideRequired70je suis invalide 
+@winPredButton62je suis invalide 
+@nextSlideRequired67je suis invalide 
+@winPredButton60je suis invalide 
+@winPredButton58je suis invalide 
+@nextSlideRequired66je suis invalide 
+@nextSlideRequired65je suis invalide 
+@winPredButton57je suis invalide 
+@nextSlideRequired62je suis invalide 
+@winPredButton55je suis invalide 
+@nextSlideRequired61je suis invalide 
+@nextSlideRequired58je suis invalide 
+@winPredButton52je suis invalide 
+@nextSlideRequired56je suis invalide 
+@winPredButton51je suis invalide 
+@nextSlideRequired54je suis invalide 
+@winPredButton49je suis invalide 
+@winPredButton46je suis invalide 
+@nextSlideRequired53je suis invalide 
+@winPredButton45je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired48je suis invalide 
+@nextSlideRequired47je suis invalide 
+@nextSlideRequired43je suis invalide 
+@winPredButton42je suis invalide 
+@nextSlideRequired42je suis invalide 
+@nextButton27je suis valide 
+@nextSlideRequired41je suis invalide 
+@winPredButton39je suis invalide 
+@nextButton18je suis valide 
+@nextSlideRequired38je suis invalide 
+@winPredButton38je suis invalide 
+@nextButton15je suis valide 
+@nextSlideRequired37je suis invalide 
+@winPredButton35je suis invalide 
+@prevButton34je suis invalide 
+@nextSlideRequired36je suis invalide 
+@winPredButton29je suis invalide 
+@nextButton11je suis invalide 
+@prevButton32je suis valide 
+@nextButton7je suis invalide 
+@nextSlideRequired28je suis invalide 
+@winSuivButton33je suis invalide 
+@winPredButton24je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextButton6je suis invalide 
+@prevButton31je suis invalide 
+@nextButton3je suis invalide 
+@winPredButton20je suis invalide 
+@winSuivButton15je suis invalide 
+@nextSlideRequired19je suis invalide 
+@prevButton30je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winPredButton14je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton25je suis invalide 
+@winSuivButton12je suis valide 
+@nextSlideRequired1je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired1je suis invalide 
+@prevButton22je suis invalide 
+@prevButton21je suis valide 
+@prevButton16je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis invalide 
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextSlideRequired72je suis invalide 
+@nextSlideRequired70je suis invalide 
+@nextSlideRequired67je suis invalide 
+@nextSlideRequired66je suis invalide 
+@nextSlideRequired65je suis invalide 
+@winPredButton73je suis invalide 
+@nextSlideRequired62je suis invalide 
+@winPredButton70je suis invalide 
+@nextSlideRequired61je suis invalide 
+@winPredButton69je suis invalide 
+@winPredButton68je suis invalide 
+@nextSlideRequired58je suis invalide 
+@winPredButton64je suis invalide 
+@nextSlideRequired56je suis invalide 
+@winPredButton62je suis invalide 
+@nextSlideRequired54je suis invalide 
+@winPredButton60je suis invalide 
+@winPredButton58je suis invalide 
+@nextSlideRequired53je suis invalide 
+@winPredButton57je suis invalide 
+@nextSlideRequired50je suis invalide 
+@winPredButton55je suis invalide 
+@nextSlideRequired48je suis invalide 
+@winPredButton52je suis invalide 
+@prevButton34je suis invalide 
+@nextSlideRequired47je suis invalide 
+@winPredButton51je suis invalide 
+@prevButton32je suis valide 
+@winPredButton49je suis invalide 
+@nextButton27je suis valide 
+@winPredButton46je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired43je suis invalide 
+@nextButton18je suis valide 
+@prevButton30je suis invalide 
+@winPredButton45je suis invalide 
+@nextButton15je suis valide 
+@prevButton25je suis invalide 
+@nextSlideRequired42je suis invalide 
+@prevButton22je suis invalide 
+@nextButton11je suis invalide 
+@winPredButton42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@winPredButton39je suis invalide 
+@prevButton21je suis valide 
+@nextSlideRequired38je suis invalide 
+@winPredButton38je suis invalide 
+@nextButton7je suis invalide 
+@prevButton16je suis valide 
+@winPredButton35je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired36je suis invalide 
+@winPredButton29je suis invalide 
+@prevButton9je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextButton6je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevButton5je suis invalide 
+@nextSlideRequired26je suis invalide 
+@winPredButton24je suis invalide 
+@winSuivButton33je suis invalide 
+@winSuivButton23je suis invalide 
+@nextButton3je suis invalide 
+@winPredButton20je suis invalide 
+@prevButton4je suis invalide 
+@prevSlideRequired1je suis invalide 
+@nextSlideRequired19je suis invalide 
+@winSuivButton15je suis invalide 
+@winPredButton14je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton0je suis invalide 
+@winSuivButton12je suis valide 
+@nextSlideRequired1je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextSlideRequired67je suis invalide 
+@nextSlideRequired66je suis invalide 
+@nextSlideRequired65je suis invalide 
+@nextSlideRequired62je suis invalide 
+@winPredButton69je suis invalide 
+@prevButton34je suis invalide 
+@nextSlideRequired61je suis invalide 
+@winPredButton68je suis invalide 
+@nextSlideRequired58je suis invalide 
+@winPredButton64je suis invalide 
+@winPredButton62je suis invalide 
+@nextSlideRequired56je suis invalide 
+@winPredButton60je suis invalide 
+@prevButton32je suis valide 
+@nextSlideRequired54je suis invalide 
+@winPredButton58je suis invalide 
+@nextSlideRequired53je suis invalide 
+@winPredButton57je suis invalide 
+@winPredButton55je suis invalide 
+@nextSlideRequired50je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired48je suis invalide 
+@winPredButton52je suis invalide 
+@prevButton30je suis invalide 
+@nextSlideRequired47je suis invalide 
+@winPredButton51je suis invalide 
+@nextSlideRequired43je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired42je suis invalide 
+@winPredButton49je suis invalide 
+@nextSlideRequired41je suis invalide 
+@prevButton22je suis invalide 
+@winPredButton46je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextSlideRequired37je suis invalide 
+@winPredButton45je suis invalide 
+@nextSlideRequired36je suis invalide 
+@prevButton21je suis valide 
+@winPredButton42je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@prevButton16je suis valide 
+@nextSlideRequired19je suis invalide 
+@winPredButton39je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextButton27je suis valide 
+@winSuivButton33je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextButton18je suis valide 
+@nextButton15je suis valide 
+@nextButton11je suis invalide 
+@winPredButton35je suis invalide 
+@winPredButton29je suis invalide 
+@winPredButton24je suis invalide 
+@winPredButton20je suis invalide 
+@winPredButton14je suis invalide 
+@winSuivButton23je suis invalide 
+@nextButton7je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton15je suis invalide 
+@nextButton6je suis invalide 
+@nextButton3je suis invalide 
+@prevSlideRequired1je suis invalide 
+@winSuivButton12je suis valide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis invalide 
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@winPredButton64je suis invalide 
+@winPredButton62je suis invalide 
+@winPredButton60je suis invalide 
+@winPredButton58je suis invalide 
+@winPredButton57je suis invalide 
+@winPredButton55je suis invalide 
+@winPredButton52je suis invalide 
+@winPredButton51je suis invalide 
+@winPredButton49je suis invalide 
+@winPredButton46je suis invalide 
+@winPredButton45je suis invalide 
+@nextButton27je suis valide 
+@winPredButton42je suis invalide 
+@nextButton18je suis valide 
+@winPredButton39je suis invalide 
+@nextSlideRequired65je suis invalide 
+@nextSlideRequired62je suis invalide 
+@winPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextButton15je suis valide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired61je suis invalide 
+@nextSlideRequired58je suis invalide 
+@nextSlideRequired56je suis invalide 
+@nextSlideRequired54je suis invalide 
+@nextSlideRequired53je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired48je suis invalide 
+@nextSlideRequired47je suis invalide 
+@nextSlideRequired43je suis invalide 
+@nextSlideRequired42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired36je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@prevButton34je suis invalide 
+@prevButton32je suis valide 
+@prevButton31je suis invalide 
+@prevButton30je suis invalide 
+@prevButton25je suis invalide 
+@prevButton22je suis invalide 
+@prevButton21je suis valide 
+@prevButton16je suis valide 
+@prevButton9je suis invalide 
+@winSuivButton33je suis invalide 
+@nextSlideRequired19je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton35je suis invalide 
+@winSuivButton23je suis invalide 
+@winPredButton29je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevSlideRequired1je suis invalide 
+@nextButton3je suis invalide 
+@prevButton4je suis invalide 
+@winPredButton24je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winSuivButton15je suis invalide 
+@winPredButton20je suis invalide 
+@prevButton0je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton14je suis invalide 
+@winSuivButton12je suis valide 
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@winPredButton60je suis invalide 
+@winPredButton58je suis invalide 
+@winPredButton57je suis invalide 
+@winPredButton55je suis invalide 
+@winPredButton52je suis invalide 
+@winPredButton51je suis invalide 
+@winPredButton49je suis invalide 
+@winPredButton46je suis invalide 
+@winPredButton45je suis invalide 
+@winPredButton42je suis invalide 
+@prevButton34je suis invalide 
+@winPredButton39je suis invalide 
+@prevButton32je suis valide 
+@winPredButton38je suis invalide 
+@nextSlideRequired61je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired58je suis invalide 
+@prevButton30je suis invalide 
+@winPredButton35je suis invalide 
+@nextSlideRequired56je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired54je suis invalide 
+@prevButton22je suis invalide 
+@nextSlideRequired53je suis invalide 
+@nextSlideRequired50je suis invalide 
+@winPredButton29je suis invalide 
+@nextSlideRequired48je suis invalide 
+@prevButton21je suis valide 
+@nextSlideRequired47je suis invalide 
+@nextSlideRequired43je suis invalide 
+@nextSlideRequired42je suis invalide 
+@winPredButton24je suis invalide 
+@nextSlideRequired41je suis invalide 
+@nextButton27je suis valide 
+@nextSlideRequired38je suis invalide 
+@prevButton16je suis valide 
+@nextSlideRequired37je suis invalide 
+@nextButton18je suis valide 
+@nextSlideRequired36je suis invalide 
+@prevButton9je suis invalide 
+@winPredButton20je suis invalide 
+@nextButton15je suis valide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextSlideRequired19je suis invalide 
+@prevButton5je suis invalide 
+@nextButton11je suis invalide 
+@winSuivButton33je suis invalide 
+@nextButton7je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winPredButton14je suis invalide 
+@winSuivButton23je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton4je suis invalide 
+@winSuivButton15je suis invalide 
+@prevSlideRequired1je suis invalide 
+@nextButton3je suis invalide 
+@winSuivButton12je suis valide 
+@prevButton0je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@nextSlideRequired56je suis invalide 
+@nextSlideRequired54je suis invalide 
+@nextSlideRequired53je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired48je suis invalide 
+@nextSlideRequired47je suis invalide 
+@nextSlideRequired43je suis invalide 
+@nextSlideRequired42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@nextButton27je suis valide 
+@nextButton18je suis valide 
+@nextSlideRequired38je suis invalide 
+@nextButton15je suis valide 
+@prevButton34je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextButton11je suis invalide 
+@prevButton32je suis valide 
+@winPredButton57je suis invalide 
+@nextSlideRequired36je suis invalide 
+@prevButton31je suis invalide 
+@winPredButton55je suis invalide 
+@nextButton7je suis invalide 
+@nextSlideRequired28je suis invalide 
+@prevButton30je suis invalide 
+@winPredButton52je suis invalide 
+@prevButton25je suis invalide 
+@winPredButton51je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextButton6je suis invalide 
+@prevButton22je suis invalide 
+@winPredButton49je suis invalide 
+@prevButton21je suis valide 
+@winPredButton46je suis invalide 
+@nextButton3je suis invalide 
+@nextSlideRequired19je suis invalide 
+@winPredButton45je suis invalide 
+@winPredButton42je suis invalide 
+@winPredButton39je suis invalide 
+@winPredButton38je suis invalide 
+@winPredButton35je suis invalide 
+@winPredButton29je suis invalide 
+@winPredButton24je suis invalide 
+@winPredButton20je suis invalide 
+@winPredButton14je suis invalide 
+@winSuivButton33je suis invalide 
+@winSuivButton23je suis invalide 
+@winSuivButton15je suis invalide 
+@prevButton16je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winSuivButton12je suis valide 
+@prevSlideRequired10je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevSlideRequired1je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton0je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@prevButton34je suis invalide 
+@prevButton32je suis valide 
+@winPredButton52je suis invalide 
+@winPredButton51je suis invalide 
+@nextSlideRequired53je suis invalide 
+@prevButton31je suis invalide 
+@winPredButton49je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired48je suis invalide 
+@prevButton30je suis invalide 
+@winPredButton46je suis invalide 
+@nextSlideRequired47je suis invalide 
+@nextSlideRequired43je suis invalide 
+@winPredButton45je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired42je suis invalide 
+@winPredButton42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@prevButton22je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextButton27je suis valide 
+@winPredButton39je suis invalide 
+@nextButton18je suis valide 
+@nextSlideRequired37je suis invalide 
+@prevButton21je suis valide 
+@nextButton15je suis valide 
+@nextSlideRequired36je suis invalide 
+@prevButton16je suis valide 
+@winPredButton38je suis invalide 
+@nextSlideRequired28je suis invalide 
+@prevButton9je suis invalide 
+@nextButton11je suis invalide 
+@nextSlideRequired26je suis invalide 
+@winPredButton35je suis invalide 
+@prevButton5je suis invalide 
+@nextButton7je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired19je suis invalide 
+@nextButton6je suis invalide 
+@winPredButton29je suis invalide 
+@winSuivButton33je suis invalide 
+@winPredButton24je suis invalide 
+@prevButton0je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextButton3je suis invalide 
+@winSuivButton23je suis invalide 
+@winPredButton20je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winSuivButton15je suis invalide 
+@prevSlideRequired10je suis invalide 
+@winSuivButton12je suis valide 
+@prevSlideRequired1je suis invalide 
+@winPredButton14je suis invalide 
+@nextSlideRequired1je suis invalide 
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@winPredButton49je suis invalide 
+@winPredButton46je suis invalide 
+@winPredButton45je suis invalide 
+@winPredButton42je suis invalide 
+@winPredButton39je suis invalide 
+@nextSlideRequired48je suis invalide 
+@nextButton27je suis valide 
+@nextSlideRequired47je suis invalide 
+@winPredButton38je suis invalide 
+@prevButton34je suis invalide 
+@nextSlideRequired43je suis invalide 
+@prevButton32je suis valide 
+@prevButton31je suis invalide 
+@nextButton18je suis valide 
+@winPredButton35je suis invalide 
+@nextSlideRequired42je suis invalide 
+@prevButton30je suis invalide 
+@winPredButton29je suis invalide 
+@nextButton15je suis valide 
+@prevButton25je suis invalide 
+@nextSlideRequired41je suis invalide 
+@winPredButton24je suis invalide 
+@prevButton22je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextButton11je suis invalide 
+@prevButton21je suis valide 
+@nextSlideRequired37je suis invalide 
+@winPredButton20je suis invalide 
+@prevButton16je suis valide 
+@nextSlideRequired36je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextButton7je suis invalide 
+@prevButton9je suis invalide 
+@winPredButton14je suis invalide 
+@nextSlideRequired26je suis invalide 
+@prevButton5je suis invalide 
+@nextSlideRequired19je suis invalide 
+@prevButton4je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton0je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winSuivButton33je suis invalide 
+@winSuivButton23je suis invalide 
+@winSuivButton15je suis invalide 
+@winSuivButton12je suis valide 
+@nextButton3je suis invalide 
+@prevSlideRequired1je suis invalide 
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winSuivButton33je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextSlideRequired43je suis invalide 
+@nextSlideRequired42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextButton27je suis valide 
+@nextButton18je suis valide 
+@nextButton15je suis valide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired36je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextSlideRequired19je suis invalide 
+@winPredButton45je suis invalide 
+@nextButton3je suis invalide 
+@prevButton34je suis invalide 
+@prevButton32je suis valide 
+@prevButton31je suis invalide 
+@prevButton30je suis invalide 
+@prevButton25je suis invalide 
+@prevButton22je suis invalide 
+@prevButton21je suis valide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winPredButton42je suis invalide 
+@winPredButton39je suis invalide 
+@winPredButton38je suis invalide 
+@winPredButton35je suis invalide 
+@winPredButton29je suis invalide 
+@winPredButton24je suis invalide 
+@winPredButton20je suis invalide 
+@winSuivButton23je suis invalide 
+@prevButton16je suis valide 
+@prevSlideRequired1je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton14je suis invalide 
+@winSuivButton15je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton12je suis valide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@nextSlideRequired41je suis invalide 
+@nextSlideRequired38je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired36je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextSlideRequired19je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton39je suis invalide 
+@winPredButton38je suis invalide 
+@winPredButton35je suis invalide 
+@winPredButton29je suis invalide 
+@winPredButton24je suis invalide 
+@winPredButton20je suis invalide 
+@winPredButton14je suis invalide 
+@nextButton27je suis valide 
+@nextButton18je suis valide 
+@nextButton15je suis valide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextButton3je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired1je suis invalide 
+@winSuivButton33je suis invalide 
+@winSuivButton23je suis invalide 
+@winSuivButton15je suis invalide 
+@winSuivButton12je suis valide 
+@prevButton34je suis invalide 
+@prevButton32je suis valide 
+@prevButton31je suis invalide 
+@prevButton30je suis invalide 
+@prevButton25je suis invalide 
+@prevButton22je suis invalide 
+@prevButton21je suis valide 
+@prevButton16je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winPredButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@winPredButton a envoyé un message de type ANNONCER aux agents : 	@prevButton	@nextButton
+@@@@@ : @prevButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type REPONDRE aux agents : @winPredButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired36je suis invalide 
+@nextSlideRequired28je suis invalide 
+@nextSlideRequired26je suis invalide 
+@nextSlideRequired19je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton34je suis invalide 
+@prevButton32je suis valide 
+@prevButton31je suis invalide 
+@prevButton30je suis invalide 
+@prevButton25je suis invalide 
+@prevButton22je suis invalide 
+@prevButton21je suis valide 
+@nextButton27je suis valide 
+@nextButton18je suis valide 
+@nextButton15je suis valide 
+@nextButton11je suis invalide 
+@nextButton7je suis 

@@ -120,6 +120,8 @@ public class ButtonInstance extends InstanceAgent {
 				seDeconnecter(sA);
 				// vider la liste des agents connectés
 				sA.getConnectedAgents().clear();
+				//changer son etat
+				sA.setState(false);
 			}
 
 		}
@@ -158,6 +160,18 @@ public class ButtonInstance extends InstanceAgent {
 			sATriggingDeconnection.decrementNbLink();
 		}
 		// sAConnected.clear();
+
+	}
+	/**
+	 * 
+	 * @param serviceAgentsHashSet
+	 */
+	public void setReceiverSAList(HashSet<ServiceAgent> serviceAgentsHashSet) {
+		this.hashSet = serviceAgentsHashSet;
+		// mettre à jour des agents devant recevoir l'annonce
+		for (int i = 0; i < this.serviceAgents.size(); i++) {
+			this.serviceAgents.get(i).setsAListReceivingMessages(hashSet);
+		}
 
 	}
 

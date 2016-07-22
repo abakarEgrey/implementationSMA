@@ -24,7 +24,7 @@ public class Winamp extends InstanceAgent {
 
 	private AgentsConnectionToUPnP agentsConnectionToUPnP;
 
-	public Winamp(String id, Routage routage, String idServiceAgent, HashSet<ServiceAgent> hashSet,
+	public Winamp(String id, Routage routage, HashSet<ServiceAgent> hashSet,
 			AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
 		super(id, routage, agentsConnectionToUPnP, container);
 		this.id = id;
@@ -82,4 +82,6 @@ public class Winamp extends InstanceAgent {
 		}
 
 	}
+	
+	
 }

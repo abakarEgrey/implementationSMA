@@ -149,7 +149,6 @@ public class ServiceAgentMessage extends AbstractMessage {
 			System.out.print(sA.getId() + " ");
 		}
 		System.out.println("] )");
-		;
 		System.out.println("nbOfConnection : " + this.nbOfConnection);
 		System.out.println("actionType : " + this.actionType);
 		System.out.println("refServiceAgent" + this.refServiceAgent);

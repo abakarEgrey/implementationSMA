@@ -17,6 +17,7 @@ import implementationSMA.agents.AgentsConnectionToUPnP;
 import implementationSMA.agents.ButtonInstance;
 import implementationSMA.agents.ImpressInstance;
 import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.Winamp;
 import fr.irit.smac.libs.tooling.messaging.impl.AgentMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.BasicMutableDirectory;
 import fr.irit.smac.libs.tooling.messaging.impl.IMutableDirectory;
@@ -254,6 +255,74 @@ public class Test {
 			System.out.println("/*====================execution du step-11   terminé================*/");
 			// finsma
 			boutonPred.disappear();
+
+			Winamp winampComponent = new Winamp("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
+			String winamp = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
+			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(0), "Winamp");
+			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(1), "Winamp");
+			// ajout des agents du composant winamp à la liste des agents
+			// pouvant recevoir l'annonce des agents
+			impressAgents.addAll(winampComponent.getServiceAgentList());
+			System.out.println("/*====================debut de l'execution du step-11bis==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-11Bis   terminé================*/");
+
+			System.out.println("/*====================debut de l'execution du step-12==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-12   terminé================*/");
+			
+			System.out.println("/*====================debut de l'execution du step-13==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-13   terminé================*/");
+			
+			System.out.println("/*====================debut de l'execution du step-14==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-14   terminé================*/");
+			
+			System.out.println("/*====================debut de l'execution du step-15==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-15   terminé================*/");
+			
+			System.out.println("/*====================debut de l'execution du step-16==============*/");
+			boutonPred.getServiceAgentList().get(0).nextStep();
+			boutonSuiv.nextStep();
+			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
+				impress.getServiceAgentList().get(i).nextStep();
+				winampComponent.getServiceAgentList().get(i).nextStep();
+
+			}
+			System.out.println("/*====================execution du step-16   terminé================*/");
+
 			pause(100000);
 			c.stopSpy();
 
