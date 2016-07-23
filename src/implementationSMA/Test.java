@@ -78,6 +78,8 @@ public class Test {
 			// creation de l'ImpressJ
 			String impressJS = c.createBeanAtPos("ImpressJS", "WComp.UPnPDevice.ImpressJS", 400, 100);
 
+			@SuppressWarnings("unused")
+			String linkBut1 = c.createLink("Bouton 1", "Click", "ImpressJS", "Next", "");
 			// ajout dans le map
 
 			agentsConnectionToUPnP.addServiceAgent(impress.getServiceAgentList().get(0), "ImpressJS");

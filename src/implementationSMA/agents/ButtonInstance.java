@@ -116,11 +116,17 @@ public class ButtonInstance extends InstanceAgent {
 		 * qui il est connecté
 		 */
 		for (ServiceAgent sA : this.serviceAgents) {
+			String list = "[";
+			for (ServiceAgent serviceAgent : sA.getConnectedAgents()) {
+				list += serviceAgent.getId() + " ";
+			}
+			list += "]";
+			System.out.println("sA.getConnectedAgents() = " + list + " " + sA.getId());
 			if (!sA.getConnectedAgents().isEmpty()) {
 				seDeconnecter(sA);
 				// vider la liste des agents connectés
 				sA.getConnectedAgents().clear();
-				//changer son etat
+				// changer son etat
 				sA.setState(false);
 			}
 
@@ -144,10 +150,8 @@ public class ButtonInstance extends InstanceAgent {
 			ServiceAgentMessage sAM = new ServiceAgentMessage(sATriggingDeconnection.getCardinality(),
 					sATriggingDeconnection.getInstanceAgent().getType().toString(), MessageType.SAMESSAGE,
 					sATriggingDeconnection.getCurrentServiceState(),
-					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId())
-							.getFirst(),
-					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId())
-							.getSecond(),
+					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId()).getFirst(),
+					sATriggingDeconnection.getNbOfConnectionAndAverageTime().get(serviceAgent.getId()).getSecond(),
 					sATriggingDeconnection, Action.SEDECONNECTER);
 
 			messageBox.send(sAM, serviceAgent.getRefBox());
@@ -162,6 +166,7 @@ public class ButtonInstance extends InstanceAgent {
 		// sAConnected.clear();
 
 	}
+
 	/**
 	 * 
 	 * @param serviceAgentsHashSet

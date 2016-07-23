@@ -16,6 +16,7 @@ import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.ITwoStepsAgent;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.TwoStepsSystemStrategy;
 import implementationSMA.agents.AgentsConnectionToUPnP;
+import implementationSMA.agents.ArdinoInstance;
 import implementationSMA.agents.ButtonInstance;
 import implementationSMA.agents.ImpressInstance;
 import implementationSMA.agents.ServiceAgent;
@@ -121,6 +122,7 @@ public class TestTwoSteps {
 			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-5====================*/");
 			twoStepsForOppoCompo.doStep();
 			ServiceAgent.getPile().empiler("/*==============execution du step- terminé====================*/");
+		
 			/*sssfoc.doStep();*/
 			boutonPred.disappear();
 			//boutonSuiv.disappear();
@@ -159,12 +161,39 @@ public class TestTwoSteps {
 			twoStepsForOppoCompo.doStep();
 			ServiceAgent.getPile().empiler("/*==============execution du step-9 terminé====================*/");
 			
+//			boolean arret = true;
+//			int nbIter = 0;
+//			while(arret) {
+//				twoStepsForOppoCompo.doStep();
+//				nbIter++;
+//				if (nbIter > 10){
+//					arret = false;
+//				}
+//			}
+			
+			//création et apparition du composant ardino avec les 2 boutons physiques
+			HashSet<ServiceAgent> ardinoDestinationAgents = new HashSet<>();
+			ardinoDestinationAgents.addAll(impressAgents);
+			ardinoDestinationAgents.addAll(winampComponent.getServiceAgentList());
+			ArdinoInstance ardinoInstance = new ArdinoInstance("ArdinoComponent", null, ardinoDestinationAgents, agentsConnectionToUPnP, c);
+			
+			ardinoInstance.getServiceAgentList().get(0).setPile(pile);
+			ardinoInstance.getServiceAgentList().get(1).setPile(pile);
+			
+			pause(5000);
+			String ardino = c.createBeanAtPos("Ardino Component", "WComp.UPnPDevice.Arduino_Button", 200, 100);
+			
+			agentsConnectionToUPnP.addServiceAgent(ardinoInstance.getServiceAgentList().get(0), "Ardino Component");
+			agentsConnectionToUPnP.addServiceAgent(ardinoInstance.getServiceAgentList().get(1), "Ardino Component");
+			
+			hashSet.addAll(ardinoInstance.getServiceAgentList());
+			twoStepsForOppoCompo.addAgents(hashSet);
 			boolean arret = true;
 			int nbIter = 0;
 			while(arret) {
 				twoStepsForOppoCompo.doStep();
 				nbIter++;
-				if (nbIter > 10){
+				if (nbIter > 20){
 					arret = false;
 				}
 			}
