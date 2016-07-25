@@ -25,7 +25,7 @@ public class SmaInterface extends JFrame implements Runnable{
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				TestUI.getInstance().addButton();
-			}
+			} 
         });
 		panel.add(bouton);
  
