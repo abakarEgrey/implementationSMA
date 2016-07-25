@@ -1,10 +1,13 @@
-package implementationSMA.agents;
+package implementationSMA.agents.InstanceAgents;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
 import com.irit.upnp.ContainerWComp;
 
+import implementationSMA.agents.AgentsConnectionToUPnP;
+import implementationSMA.agents.Routage;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.enumeration.InterfaceType;
 
 public class ImpressInstance extends InstanceAgent {

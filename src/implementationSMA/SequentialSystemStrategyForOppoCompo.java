@@ -17,7 +17,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import fr.irit.smac.libs.tooling.scheduling.impl.system.AbstractSystemStrategy;
 import fr.irit.smac.libs.tooling.scheduling.impl.system.SynchronizedSystemStrategy;
-import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 //import simulateur.SimulateurAgent;
 //import agent.context.Context;

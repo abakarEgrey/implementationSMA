@@ -19,6 +19,7 @@ import com.irit.upnp.SpyAlreadyRunning;
 import exceptions.RemovedLink;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import implementationSMA.Pair;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 public class AgentsConnectionToUPnP {
 

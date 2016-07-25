@@ -1,6 +1,6 @@
 package implementationSMA.messages;
 
-import implementationSMA.agents.ContextAgent;
+import implementationSMA.agents.ContextAgents.ContextAgent;
 import implementationSMA.enumeration.Action;
 import implementationSMA.enumeration.MessageType;
 

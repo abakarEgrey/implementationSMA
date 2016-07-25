@@ -1,4 +1,4 @@
-package implementationSMA.agents;
+package implementationSMA.agents.ContextAgents;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,9 @@ import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
+import implementationSMA.Pile;
+import implementationSMA.agents.Agent;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.enumeration.Action;
 import implementationSMA.messages.AbstractMessage;
 import implementationSMA.messages.ContextAgentProposition;
@@ -216,7 +219,8 @@ public class ContextAgent extends Agent {
 	public void perceive() {
 		// New cycle, e
 		System.out.println("perceive: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
-		this.serviceAgent.getPile()
+		ServiceAgent.getPile();
+		Pile
 				.empiler("perceive: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		isValid = false;
 		listValidatingSAMessage.clear();
@@ -273,7 +277,8 @@ public class ContextAgent extends Agent {
 
 		}
 		System.out.println("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
-		this.serviceAgent.getPile()
+		ServiceAgent.getPile();
+		Pile
 				.empiler("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 
@@ -290,23 +295,27 @@ public class ContextAgent extends Agent {
 	@Override
 	protected void decide() {
 		System.out.println("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
-		this.serviceAgent.getPile()
+		ServiceAgent.getPile();
+		Pile
 				.empiler("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		// A contextAgent may be valid for multiple messages, for all those
 		// messages he will send a proposition to its service agent
 		// No real decision
 
 		System.out.println("decide : " + this.getId() + " Agent Contexte: mon execution est terminée");
-		this.serviceAgent.getPile().empiler("decide : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		ServiceAgent.getPile();
+		Pile.empiler("decide : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 
 	@Override
 	protected void act() {
 		System.out.println("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
-		this.serviceAgent.getPile().empiler("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
+		ServiceAgent.getPile();
+		Pile.empiler("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		if (isValid) {
 			System.out.println(this.getId() + "je suis valide ");
-			this.serviceAgent.getPile().empiler(this.getId() + "je suis valide ");
+			ServiceAgent.getPile();
+			Pile.empiler(this.getId() + "je suis valide ");
 			if (listValidatingSAMessage.isEmpty()) {
 				// TODO serviceAgentMessage est null car l'agent contexte ne
 				// repond a aucun message. Il faut tester le service agent
@@ -324,10 +333,12 @@ public class ContextAgent extends Agent {
 			}
 		} else {
 			System.out.println(this.getId() + "je suis invalide ");
-			this.serviceAgent.getPile().empiler(this.getId() + "je suis invalide ");
+			ServiceAgent.getPile();
+			Pile.empiler(this.getId() + "je suis invalide ");
 		}
 		System.out.println("act : " + this.getId() + " Agent Contexte: mon execution est terminée");
-		this.serviceAgent.getPile().empiler("act : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		ServiceAgent.getPile();
+		Pile.empiler("act : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 	/**
 	 * 

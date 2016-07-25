@@ -2,7 +2,7 @@ package implementationSMA;
 import java.util.ArrayList;
 
 import implementationSMA.agents.Agent;
-import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.messages.AbstractMessage;
 import implementationSMA.messages.ContextAgentProposition;
 import implementationSMA.messages.ServiceAgentMessage;

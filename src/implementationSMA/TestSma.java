@@ -11,9 +11,9 @@ import com.irit.upnp.SpyNotRunning;
 
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import implementationSMA.agents.AgentsConnectionToUPnP;
-import implementationSMA.agents.ButtonInstance;
-import implementationSMA.agents.ImpressInstance;
-import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.InstanceAgents.ButtonInstance;
+import implementationSMA.agents.InstanceAgents.ImpressInstance;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 public class TestSma {
 

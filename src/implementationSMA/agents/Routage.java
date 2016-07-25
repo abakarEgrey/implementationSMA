@@ -7,6 +7,7 @@ import java.util.Set;
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.agents.InstanceAgents.InstanceAgent;
 import implementationSMA.messages.AbstractMessage;
 
 /**

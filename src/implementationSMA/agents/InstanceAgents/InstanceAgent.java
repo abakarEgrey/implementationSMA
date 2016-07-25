@@ -1,4 +1,4 @@
-package implementationSMA.agents;
+package implementationSMA.agents.InstanceAgents;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,6 +11,10 @@ import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
+import implementationSMA.agents.Agent;
+import implementationSMA.agents.AgentsConnectionToUPnP;
+import implementationSMA.agents.Routage;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.messages.AbstractMessage;
 
 public class InstanceAgent extends Agent {
@@ -279,5 +283,21 @@ public class InstanceAgent extends Agent {
 	public boolean disappear() {
 		return false;
 
+	}
+
+	/**
+	 * 
+	 * @param AskingserviceAgent
+	 * @return
+	 */
+	public ArrayList<ServiceAgent> getNeighboursSA(ServiceAgent AskingserviceAgent) {
+		// TODO Auto-generated method stub
+		ArrayList<ServiceAgent> neighBours = new ArrayList<>();
+		for (ServiceAgent sA : this.serviceAgents){
+			if (!this.serviceAgents.contains(AskingserviceAgent)){
+				neighBours.add(sA);
+			}
+		}
+		return neighBours;
 	}
 }

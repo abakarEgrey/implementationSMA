@@ -4,7 +4,7 @@ import java.util.List;
 
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
-import implementationSMA.agents.ServiceAgent;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.enumeration.Action;
 import implementationSMA.enumeration.MessageType;
 

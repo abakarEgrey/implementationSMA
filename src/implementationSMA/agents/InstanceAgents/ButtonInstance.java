@@ -1,4 +1,4 @@
-package implementationSMA.agents;
+package implementationSMA.agents.InstanceAgents;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,6 +9,9 @@ import exceptions.RemovedLink;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import implementationSMA.Pair;
+import implementationSMA.agents.AgentsConnectionToUPnP;
+import implementationSMA.agents.Routage;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.enumeration.Action;
 import implementationSMA.enumeration.InterfaceType;
 import implementationSMA.enumeration.MessageType;

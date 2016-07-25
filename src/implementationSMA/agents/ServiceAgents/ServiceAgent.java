@@ -1,4 +1,4 @@
-package implementationSMA.agents;
+package implementationSMA.agents.ServiceAgents;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,6 +16,9 @@ import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
 import implementationSMA.Pile;
+import implementationSMA.agents.Agent;
+import implementationSMA.agents.ContextAgents.ContextAgent;
+import implementationSMA.agents.InstanceAgents.InstanceAgent;
 import implementationSMA.enumeration.Action;
 import implementationSMA.enumeration.InterfaceType;
 import implementationSMA.enumeration.MessageType;
@@ -396,7 +399,7 @@ public class ServiceAgent extends Agent {
 	 * cette methode est appélée par l'agent service qui effectue la connection
 	 */
 	public synchronized boolean incrementNbLink() {
-		if (this.nbLink >= this.cardinality){
+		if (this.nbLink >= this.cardinality) {
 			return false;
 		}
 		this.nbLink++;
@@ -416,48 +419,60 @@ public class ServiceAgent extends Agent {
 		this.annonced = false;
 		System.out.println("perceive: " + this.getId() + " Agent service: je suis en cours d'exécution");
 		String methodToDisplay = "perceive: " + this.getId() + " Agent service: je suis en cours d'exécution";
-		pile.empiler(methodToDisplay);
+		Pile.empiler(methodToDisplay);
 		// serviceAgentMessages = this.msgBoxHAgent.getSaMessages();
 		// vider les listes des servicesAgentsMessages et actionsChoosedByItSelf
 		// de la cycle precedente . Creer une fonction qui vide toutes les
 		// structures non écrasés
-		this.listOfSAMNoProposition.clear();
-		this.actionsChoosedByItSelf.clear();
-		// sleep(1000);
+		clearSAMAndCAPList();
+
+		// mReceived contient tous les messages envoyés par ses agents contextes
+		// et par les autres agents services
 		ArrayList<AbstractMessage> mReceived = new ArrayList<AbstractMessage>(messageBox.getMsgs());
 		System.out.println("mReceived.size = " + mReceived.size() + " " + this.getId());
-		pile.empiler("mReceived.size = " + mReceived.size() + " " + this.getId());
+		Pile.empiler("mReceived.size = " + mReceived.size() + " " + this.getId());
+		// sortedMessages contient les messages triés cad les mesages envoyés
+		// par les autres agents services d'une part (this.serviceAgentMessages)
+		// et ceux envoyés par les agents contextes d'autre part
+		// (this.contextPropositions)
 		Pair<ArrayList<ContextAgentProposition>, ArrayList<ServiceAgentMessage>> sortedMessages = AbstractMessage
 				.sortAbstractMIntoCAPandSAM(mReceived);
 
 		sortedMessages = supprimerMessagesSAConnectes(sortedMessages);
-
-		contextPropositions = sortedMessages.getFirst(); // test si vide
+		//
+		this.contextPropositions = sortedMessages.getFirst(); // test si vide
 		this.serviceAgentMessages = sortedMessages.getSecond();
 
 		System.out.println("les messages envoyés par les autres agents que " + this.getId() + " percoit:");
-		pile.empiler("les messages envoyés par les autres agents que " + this.getId() + " percoit:");
+		Pile.empiler("les messages envoyés par les autres agents que " + this.getId() + " percoit:");
 		for (ServiceAgentMessage sAM : serviceAgentMessages) {
 			sAM.display();
 		}
 		// this.serviceAgentMessages = sortedMessages.getSecond();
 		// affichage des propositions des agents contextes
 
-		// execute context agents
+		// Une fois tous les messages sont triés, l'agent service invoque les
+		// agents contextes pour voir leur validité. Amélioration possible,
+		// classer les agents contextes par action proposée ou inclure un algo
+		// d'apprentissage aux agents contextes
 		for (ContextAgent cA : this.contextAgents) {
 			cA.display();
 			cA.nextStep();
 		}
-		// end execute
+		// end execution of context agents
+		// mReceived2 contient les propositions des agents contextes pour les
+		// messages récus ou pas. Ainsi, pour un message donné, plusieurs agents
+		// contextes peuvent proposer leurs actions. Ces actions peuvent etre
+		// identiques
 		ArrayList<AbstractMessage> mReceived2 = new ArrayList<AbstractMessage>(messageBox.getMsgs());
 		System.out.println("mReceived.size = " + mReceived2.size() + " " + this.getId());
-		pile.empiler("mReceived2.size = " + mReceived2.size() + " " + this.getId());
+		Pile.empiler("mReceived2.size = " + mReceived2.size() + " " + this.getId());
 		Pair<ArrayList<ContextAgentProposition>, ArrayList<ServiceAgentMessage>> sortedMessages2 = AbstractMessage
 				.sortAbstractMIntoCAPandSAM(mReceived2);
 		contextPropositions = sortedMessages2.getFirst();
 		// this.serviceAgentMessages = sortedMessages2.getSecond(); // test si
 		// vide
-
+		// affichage des propositions; A virer
 		for (ContextAgentProposition cAP : this.contextPropositions) {
 			cAP.display();
 		}
@@ -467,7 +482,9 @@ public class ServiceAgent extends Agent {
 		// ArrayList<ServiceAgentMessage> mReceivedByAS
 
 		// traiter la liste des propositions des agents contextes selon le type
-		// de message au cycle precedent
+		// de message
+		// Cette map contient une liste une association d'un message avec une
+		// liste des agents de propositions des agents contextes
 		this.listProp = sortPrositionsList();
 
 		// add the SAM which have not a proposition to the
@@ -484,7 +501,31 @@ public class ServiceAgent extends Agent {
 		// les agents contextes accèdent directement à la boite de reception de
 		// l'agent service.
 		System.out.println("perceive : " + this.getId() + " Agent service: mon execution est terminée");
-		pile.empiler("perceive : " + this.getId() + " Agent service: mon execution est terminée");
+		Pile.empiler("perceive : " + this.getId() + " Agent service: mon execution est terminée");
+	}
+
+	/**
+	 * Cette méthode permet de vider les 2 listes suivantes
+	 * 
+	 * @param this.listOfSAMNoProposition:
+	 *            liste contenant les messages des agents services dont aucune
+	 *            proposition n'a été effectué par les agents contextes
+	 * @param this.actionsChoosedByItSelf:
+	 *            liste des propositions des actions effectuées par l'agent
+	 *            service lui meme
+	 * 
+	 * @param this.choosenActions
+	 *            :une liste de liste contenant l'ensemble des propsitions des
+	 *            agents contextes et agents services. Ces propositions sont
+	 *            triées selon leurs valeurs confiances
+	 */
+	private void clearSAMAndCAPList() {
+		// TODO Auto-generated method stub
+		this.listOfSAMNoProposition.clear();
+		this.actionsChoosedByItSelf.clear();
+		// clear choosen actions matrix
+		this.choosenActions.clear();
+
 	}
 
 	/**
@@ -534,7 +575,9 @@ public class ServiceAgent extends Agent {
 	}
 
 	/**
-	 * Cette méthode permet de traiter les messages
+	 * Cette méthode permet de traiter les messages. Autrement dit, elle permet
+	 * d'associer à chaque message une liste des propositions des agents
+	 * contextes
 	 * 
 	 * @return
 	 */
@@ -563,9 +606,8 @@ public class ServiceAgent extends Agent {
 	@Override
 	protected void decide() {
 		System.out.println("decide: " + this.getId() + " Agent service: je suis en cours d'execution");
-		pile.empiler("decide: " + this.getId() + " Agent service: je suis en cours d'execution");
+		Pile.empiler("decide: " + this.getId() + " Agent service: je suis en cours d'execution");
 		// clear choosen actions matrix
-		this.choosenActions.clear();
 
 		// get the list of messages proposed by context agents
 		if (!listProp.isEmpty()) {
@@ -614,7 +656,7 @@ public class ServiceAgent extends Agent {
 			// probablement choisir l'action annoncer ou ne rien faire. A
 			// si l'agent service n'est pas connecté ou le nombre des agents
 			// avec lesquels il est connecté est inférieur à la cardinalité
-			// alors il frea une annonce
+			// alors il fera une annonce
 			if (!this.isConnected.getFirst() || this.isConnected.getSecond().size() < this.cardinality) {
 				// choisir l'action annoncer
 
@@ -647,7 +689,7 @@ public class ServiceAgent extends Agent {
 		this.choosenActions = sort2Matrices();
 
 		System.out.println("decide : " + this.getId() + " Agent service: mon execution est terminée");
-		pile.empiler("decide : " + this.getId() + " Agent service: mon execution est terminée");
+		Pile.empiler("decide : " + this.getId() + " Agent service: mon execution est terminée");
 
 	}
 
@@ -811,10 +853,20 @@ public class ServiceAgent extends Agent {
 		// un booleen qui permet de savoir la cardinalité
 		boolean isConnectionRemain = true;
 		if (!this.listOfSAMNoProposition.isEmpty()) {
-			//System.out.println("this.nbLink : " + this.nbLink + " "+ this.id);
-			pile.empiler("this.nbLink : " + this.nbLink + " "+ this.id);
+			// System.out.println("this.nbLink : " + this.nbLink + " "+
+			// this.id);
+			Pile.empiler("this.nbLink : " + this.nbLink + " " + this.id);
 			int localNbLink = this.nbLink;
+			// liste contenant les messages temporaitres à traiter à la fin de
+			// la boucle
+			ArrayList<ServiceAgentMessage> sAMListNotConnectedAgent = new ArrayList<>();
+
+			//ArrayList<ServiceAgent> sAConnected = this.getConnectedAgents();
+
 			for (ServiceAgentMessage sAM : this.listOfSAMNoProposition) {
+				if (isHasSameTypeConnected(sAM.getServiceAgent())) {
+					sAMListNotConnectedAgent.add(sAM);
+				}
 				// get action
 				Action action = sAM.getActionType();
 				// Make the sort of the confidence of service agent here in the
@@ -856,7 +908,7 @@ public class ServiceAgent extends Agent {
 					// tester si la cardinalité est atteint: pour le test du sma
 					if (isConnectionRemain) {
 						cap = new ContextAgentProposition(null, Action.SECONNECTERPHYSIQUEMENT, sAM);
-						pile.empiler("@@@@ " + this.id + "localNbLink dans decide : " + localNbLink + " @@@@@");
+						Pile.empiler("@@@@ " + this.id + "localNbLink dans decide : " + localNbLink + " @@@@@");
 						// this.nbLink++;
 					} else {
 						cap = new ContextAgentProposition(null, Action.NERIENFAIRE, sAM);
@@ -901,7 +953,7 @@ public class ServiceAgent extends Agent {
 						boolean sAState = (sAConnected.size() > 1) ? true : false;
 						this.getCurrentServiceState().setFirst(sAState);
 						sAConnected.remove(sAM.getServiceAgent());
-						//decrementer la cardnalité
+						// decrementer la cardnalité
 						this.decrementNbLink();
 
 					} else {
@@ -967,6 +1019,26 @@ public class ServiceAgent extends Agent {
 
 		}
 
+	}
+
+	/**
+	 * 
+	 * @param serviceAgent : agent service  
+	 * @return
+	 */
+	private boolean isHasSameTypeConnected(ServiceAgent senderServiceAgent) {
+		// TODO Auto-generated method stub
+		ArrayList<ServiceAgent> sAConnected = this.getConnectedAgents();
+		//ArrayList<ServiceAgent> neighBoursSA = ;
+		return false;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<ServiceAgent> getNeighboursSA() {
+		return this.instanceAgent.getNeighboursSA(this);
 	}
 
 	private boolean existAMessageWithOtherAction() {
@@ -1072,8 +1144,8 @@ public class ServiceAgent extends Agent {
 	private ArrayList<ArrayList<ContextAgentProposition>> getOrderedListOfBestActions() {
 		ArrayList<ArrayList<ContextAgentProposition>> actionsSortedByMessage = new ArrayList<ArrayList<ContextAgentProposition>>(
 				listProp.values());
-		// ArrayList<ContextAgentProposition> actionConfidenceForM = new
-		// ArrayList<ContextAgentProposition>();
+				// ArrayList<ContextAgentProposition> actionConfidenceForM = new
+				// ArrayList<ContextAgentProposition>();
 
 		// TODO: Check that each list is not empty
 
@@ -1172,28 +1244,29 @@ public class ServiceAgent extends Agent {
 				// this.messageBox.send(sAM,
 				// this.instanceAgent.getRefInstanceAgent());
 				// pour le test
-				//this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-				
-				//mettre dans une fonction : debut
+				// this.messageBox.send(sAM,
+				// cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
+
+				// mettre dans une fonction : debut
 				if (this.isConnected()) {
 					this.sAListReceivingMessages = deleteConnectedAgents();
 				}
 
 				this.broadcast(this.sAListReceivingMessages, sAM);
-				
+
 				String idSAList = "";
 				for (ServiceAgent sA : this.sAListReceivingMessages) {
 					idSAList += "\t" + sA.getId();
 				}
-				
+
 				System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ idSAList);
-				pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+				Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ idSAList);
-				//fin fonction
+				// fin fonction
 			} else {
 				this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-				pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+				Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 				// no feedback for context agents and create context
 				// agent
@@ -1224,7 +1297,7 @@ public class ServiceAgent extends Agent {
 					// this.instanceAgent.getRefInstanceAgent());
 					// pour le test
 					this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-					pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+					Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 							+ cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 				} else if (actionToBeExecute == Action.SECONNECTER) {
 					// se deconnecter de sAConnected.get(0)
@@ -1271,14 +1344,14 @@ public class ServiceAgent extends Agent {
 					// no feedback for context agents and create context
 					// agent
 					// this.createContextAgent(action);
-					pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+					Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 							+ cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 				} else if (actionToBeExecute == Action.NERIENFAIRE) {
 					if (sAM.getActionType() == Action.ANNONCER) {
 
 						sAM.setActionType(Action.REPONDRE);
 						this.messageBox.send(sAM, sAConnected.get(0).getRefBox());
-						pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
+						Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
 								+ " aux agents : " + cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 
 					} else if (sAM.getActionType() == Action.REPONDRE) {
@@ -1289,7 +1362,7 @@ public class ServiceAgent extends Agent {
 						// du nombre des liens ...
 						sAM.setActionType(Action.SECONNECTER);
 						this.messageBox.send(sAM, sAConnected.get(0).getRefBox());
-						pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
+						Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
 								+ " aux agents : " + cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 					} else if (sAM.getActionType() == Action.SECONNECTER) {
 						sAM.setActionType(Action.SEDECONNECTER);
@@ -1328,12 +1401,12 @@ public class ServiceAgent extends Agent {
 						this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
 						// ajout dans la liste des agsnts connectés
 						sAConnected.add(cAA.get(taille).getServiceAgentMessage().getServiceAgent());
-						pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
+						Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
 								+ " aux agents : " + cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 					} else {
 						// pour les cas repondre et deconnecter
 						this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-						pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
+						Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute
 								+ " aux agents : " + cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 					}
 
@@ -1351,7 +1424,7 @@ public class ServiceAgent extends Agent {
 						this.isConnected, nbOfConnection, averageTOConnexion, this, action);
 				// execute the action
 				this.messageBox.send(sAM, cAA.get(taille).getServiceAgentMessage().getRefServiceAgent());
-				pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+				Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ cAA.get(0).getServiceAgentMessage().getServiceAgent().getId());
 				// recompense negative des agents services
 				/*
@@ -1376,7 +1449,7 @@ public class ServiceAgent extends Agent {
 	@Override
 	protected void act() {
 		System.out.println("act: " + this.getId() + " Agent service: je suis en cours d'execution");
-		pile.empiler("act: " + this.getId() + " Agent service: je suis en cours d'execution");
+		Pile.empiler("act: " + this.getId() + " Agent service: je suis en cours d'execution");
 		// TODO Auto-generated method stub
 
 		if (!this.choosenActions.isEmpty()) {
@@ -1506,7 +1579,8 @@ public class ServiceAgent extends Agent {
 				cAA = sortContextPropositionList(cAA);
 				Action actionToBeExecute = cAA.get(cAA.size() - 1).getAction();
 				// Action action;
-				// Ce pair contient un booléen (representant le fait que l'action
+				// Ce pair contient un booléen (representant le fait que
+				// l'action
 				// proposé par l'agent contexte est choisie ou pas) et une
 				// action (l'action a exécuter)
 				Pair<Boolean, Action> IsChoosedProposedAction;
@@ -1643,7 +1717,7 @@ public class ServiceAgent extends Agent {
 
 					}
 					// incremente the number of link ?
-					//this.nbLink++;
+					// this.nbLink++;
 					this.incrementNbLink();
 					break;
 				case SEDECONNECTER:
@@ -1677,7 +1751,7 @@ public class ServiceAgent extends Agent {
 					// this.nbOfConnectionAndAverageTime.put(senderId,
 					// connAndTime);
 					// decremente the number of link
-					//this.nbLink--;
+					// this.nbLink--;
 					this.decrementNbLink();
 					break;
 				case NERIENFAIRE:
@@ -1717,7 +1791,7 @@ public class ServiceAgent extends Agent {
 		System.out.println("taille liste agents contextes = " + this.contextAgents.size());
 		for (ContextAgent cA : this.contextAgents) {
 			System.out.println("idContextAgent = " + cA.getId());
-			pile.empiler("idContextAgent = " + cA.getId());
+			Pile.empiler("idContextAgent = " + cA.getId());
 		}
 		System.out.println("act : " + this.getId() + " Agent service: mon exécution est terminée");
 		String connectedAgents = "";
@@ -1727,9 +1801,9 @@ public class ServiceAgent extends Agent {
 			connectedAgents += sA.getId() + " ";
 		}
 
-		pile.empiler("@@@@@ : " + this.getId() + " : ( " + this.getCurrentServiceState().getFirst() + ", ["
+		Pile.empiler("@@@@@ : " + this.getId() + " : ( " + this.getCurrentServiceState().getFirst() + ", ["
 				+ connectedAgents + " ] ) " + " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-		pile.empiler("act : " + this.getId() + " Agent service: mon exécution est terminée");
+		Pile.empiler("act : " + this.getId() + " Agent service: mon exécution est terminée");
 	}
 
 	/**
@@ -1798,7 +1872,7 @@ public class ServiceAgent extends Agent {
 				}
 				System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ idSAList);
-				pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+				Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ idSAList);
 				// this.broadcast(serviceAgentBrodcastList, sAM);
 				this.annonced = true;
@@ -1819,7 +1893,7 @@ public class ServiceAgent extends Agent {
 			System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 
-			pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+			Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 			break;
 		case SECONNECTER:
@@ -1835,18 +1909,18 @@ public class ServiceAgent extends Agent {
 			System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 
-			pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+			Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 			break;
 		case SECONNECTERPHYSIQUEMENT:
 			// build the connection message to be sended
-			
+
 			if (senderSAM.getServiceAgent().incrementNbLink()) {
 				sAM = new ServiceAgentMessage(this.cardinality, this.instanceAgent.getType().toString(),
 						MessageType.SAMESSAGE, this.isConnected, nbOfConnection, averageTOConnexion, this,
 						actionToBeExecute);
 				// incremente the number of link
-				//this.nbLink++;
+				// this.nbLink++;
 				this.incrementNbLink();
 				nbConnectionRemain--;
 
@@ -1860,7 +1934,8 @@ public class ServiceAgent extends Agent {
 				this.isConnected.setFirst(true);
 				this.isConnected.setSecond(connectedSA);
 
-				// mise à jour de l'etat de l'agent service qui a envoyé le message
+				// mise à jour de l'etat de l'agent service qui a envoyé le
+				// message
 				// de type seconnecter
 				senderSAM.getServiceAgent().setState(true);
 				ArrayList<ServiceAgent> senderConnectedAgents = new ArrayList<ServiceAgent>();
@@ -1884,8 +1959,10 @@ public class ServiceAgent extends Agent {
 				}
 
 				// fin mise à jour
-				// mettre à jour le nombre des connexions: incrémenter le nombre des
-				// connections pour cette classe et pour l'agent service en face.
+				// mettre à jour le nombre des connexions: incrémenter le nombre
+				// des
+				// connections pour cette classe et pour l'agent service en
+				// face.
 				// Probablement faire un accès synchronisé sur cette methode
 				this.incrementNbOfConnection(senderSAM.getServiceAgent());
 				senderSAM.getServiceAgent().incrementNbOfConnection(this);
@@ -1895,18 +1972,17 @@ public class ServiceAgent extends Agent {
 				System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ senderSAM.getServiceAgent().getId());
 
-				pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+				Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 						+ senderSAM.getServiceAgent().getId());
 			}
-			
-			
+
 			break;
 		case SEDECONNECTER:
 			sAM = new ServiceAgentMessage(this.cardinality, this.instanceAgent.getType().toString(),
 					MessageType.SAMESSAGE, this.isConnected, nbOfConnection, averageTOConnexion, this,
 					actionToBeExecute);
 			// decremente the number of link
-			//this.nbLink--;
+			// this.nbLink--;
 			this.decrementNbLink();
 			// a discuter s'il faut prendre en compte dans ce cycle ou au cycle
 			// suivant
@@ -1933,7 +2009,7 @@ public class ServiceAgent extends Agent {
 			System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 
-			pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+			Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 			break;
 		case NERIENFAIRE:
@@ -1946,7 +2022,7 @@ public class ServiceAgent extends Agent {
 			System.out.println(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 
-			pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
+			Pile.empiler(this.getId() + " a envoyé un message de type " + actionToBeExecute + " aux agents : "
 					+ senderSAM.getServiceAgent().getId());
 			break;
 		default:

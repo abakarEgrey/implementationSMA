@@ -2,7 +2,7 @@ package implementationSMA.messages;
 import java.util.ArrayList;
 
 import implementationSMA.Pair;
-import implementationSMA.agents.InstanceAgent;
+import implementationSMA.agents.InstanceAgents.InstanceAgent;
 import implementationSMA.enumeration.MessageType;
 
 public abstract class AbstractMessage {

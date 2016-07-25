@@ -1,0 +1,1306 @@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@winSuivButton51je suis invalide 
+@nextSlideRequired50je suis invalide 
+@prevButton28je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired42je suis valide 
+@winSuivButton45je suis invalide 
+@nextSlideRequired41je suis valide 
+@nextButton17je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton44je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@nextSlideRequired37je suis valide 
+@winSuivButton40je suis valide 
+@prevButton25je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextButton15je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@nextSlideRequired30je suis valide 
+@winSuivButton39je suis valide 
+@prevButton20je suis invalide 
+@winSuivButton34je suis valide 
+@prevButton18je suis invalide 
+@winPredButton33je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired24je suis valide 
+@nextButton11je suis invalide 
+@prevSlideRequired10je suis invalide 
+@winSuivButton27je suis valide 
+@nextSlideRequired16je suis invalide 
+@prevButton9je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@winPredButton22je suis invalide 
+@nextButton7je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton17je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton21je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevSlideRequired2je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@winSuivButton14je suis invalide 
+@nextButton3je suis valide 
+@prevButton0je suis valide 
+@winPredButton12je suis invalide 
+@nextSlideRequired1je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@prevButton28je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired41je suis valide 
+@nextSlideRequired37je suis valide 
+@winSuivButton51je suis invalide 
+@prevButton26je suis invalide 
+@nextButton17je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired35je suis valide 
+@winSuivButton45je suis invalide 
+@prevButton25je suis invalide 
+@winSuivButton44je suis invalide 
+@nextSlideRequired30je suis valide 
+@prevButton20je suis invalide 
+@nextButton15je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@winSuivButton40je suis valide 
+@prevButton18je suis invalide 
+@nextSlideRequired24je suis valide 
+@winSuivButton39je suis valide 
+@nextButton11je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@nextSlideRequired16je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winPredButton33je suis invalide 
+@nextButton7je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton22je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winSuivButton23je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@winPredButton17je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton21je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@prevButton0je suis valide 
+@winPredButton12je suis invalide 
+@nextButton3je suis valide 
+@nextSlideRequired1je suis invalide 
+@winSuivButton14je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton32je suis invalide 
+@nextButton17je suis invalide 
+@prevButton36je suis invalide 
+@winSuivButton51je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextButton15je suis invalide 
+@nextSlideRequired41je suis valide 
+@winSuivButton45je suis invalide 
+@prevButton26je suis invalide 
+@winPredButton33je suis invalide 
+@nextSlideRequired37je suis valide 
+@winSuivButton44je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextButton11je suis invalide 
+@winSuivButton40je suis valide 
+@prevButton20je suis invalide 
+@winPredButton22je suis invalide 
+@nextSlideRequired30je suis valide 
+@ArdinoPredButton52je suis invalide 
+@winSuivButton39je suis valide 
+@prevButton18je suis invalide 
+@nextSlideRequired24je suis valide 
+@nextButton7je suis invalide 
+@winPredButton17je suis invalide 
+@winSuivButton34je suis valide 
+@nextSlideRequired16je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton27je suis valide 
+@nextButton6je suis invalide 
+@prevButton5je suis invalide 
+@nextSlideRequired13je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@winSuivButton23je suis invalide 
+@prevButton4je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@nextButton3je suis valide 
+@winSuivButton21je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton0je suis valide 
+@prevSlideRequired10je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@winSuivButton14je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winPredButton12je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevSlideRequired2je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired50je suis invalide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired42je suis valide 
+@prevButton26je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired41je suis valide 
+@prevButton25je suis invalide 
+@nextButton17je suis invalide 
+@nextSlideRequired37je suis valide 
+@ArdinoPredButton48je suis invalide 
+@nextButton15je suis invalide 
+@prevButton20je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextButton11je suis invalide 
+@prevButton18je suis invalide 
+@winSuivButton51je suis invalide 
+@nextSlideRequired30je suis valide 
+@nextButton7je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@winSuivButton45je suis invalide 
+@nextSlideRequired24je suis valide 
+@prevButton9je suis invalide 
+@winSuivButton44je suis invalide 
+@nextSlideRequired16je suis invalide 
+@prevButton5je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winSuivButton23je suis invalide 
+@nextButton6je suis invalide 
+@winPredButton33je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@nextSlideRequired13je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevButton4je suis invalide 
+@winSuivButton21je suis invalide 
+@winPredButton22je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton14je suis invalide 
+@winPredButton17je suis invalide 
+@nextButton3je suis valide 
+@nextSlideRequired1je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@prevButton26je suis invalide 
+@prevButton25je suis invalide 
+@prevButton20je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@nextButton32je suis invalide 
+@nextButton17je suis invalide 
+@nextButton15je suis invalide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextButton3je suis valide 
+@winPredButton33je suis invalide 
+@winPredButton22je suis invalide 
+@winPredButton17je suis invalide 
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextSlideRequired37je suis valide 
+@nextSlideRequired35je suis valide 
+@nextSlideRequired30je suis valide 
+@nextSlideRequired24je suis valide 
+@nextSlideRequired16je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@winSuivButton21je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@winSuivButton14je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton0je suis valide 
+@winPredButton12je suis invalide 
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@winSuivButton51je suis invalide 
+@prevButton36je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@winSuivButton45je suis invalide 
+@nextButton32je suis invalide 
+@prevButton31je suis invalide 
+@winSuivButton44je suis invalide 
+@nextSlideRequired37je suis valide 
+@winSuivButton40je suis valide 
+@nextSlideRequired35je suis valide 
+@prevButton29je suis invalide 
+@nextButton17je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired30je suis valide 
+@winSuivButton39je suis valide 
+@prevButton28je suis invalide 
+@prevButton26je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevButton25je suis invalide 
+@winSuivButton34je suis valide 
+@nextSlideRequired24je suis valide 
+@nextButton15je suis invalide 
+@prevButton20je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@prevButton18je suis invalide 
+@nextSlideRequired16je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@nextButton11je suis invalide 
+@winPredButton33je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton27je suis valide 
+@nextSlideRequired13je suis invalide 
+@nextButton7je suis invalide 
+@prevSlideRequired2je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton22je suis invalide 
+@winSuivButton23je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@nextButton6je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winPredButton17je suis invalide 
+@prevButton4je suis invalide 
+@winSuivButton21je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton0je suis valide 
+@nextSlideRequired1je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@nextButton3je suis valide 
+@winPredButton12je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton32je suis invalide 
+@nextButton17je suis invalide 
+@prevButton36je suis invalide 
+@nextButton15je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@nextButton11je suis invalide 
+@prevButton28je suis invalide 
+@nextButton7je suis invalide 
+@prevButton26je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@prevButton25je suis invalide 
+@nextButton6je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevButton20je suis invalide 
+@nextButton3je suis valide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winSuivButton23je suis invalide 
+@winSuivButton21je suis invalide 
+@winSuivButton14je suis invalide 
+@winPredButton33je suis invalide 
+@winPredButton22je suis invalide 
+@winPredButton17je suis invalide 
+@winPredButton12je suis invalide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextSlideRequired37je suis valide 
+@nextSlideRequired35je suis valide 
+@nextSlideRequired30je suis valide 
+@nextSlideRequired24je suis valide 
+@nextSlideRequired16je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextSlideRequired1je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@prevButton29je suis invalide 
+@winSuivButton39je suis valide 
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextSlideRequired37je suis valide 
+@ArdinoSuivButton53je suis invalide 
+@winSuivButton34je suis valide 
+@prevButton28je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextButton17je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton27je suis valide 
+@nextSlideRequired30je suis valide 
+@ArdinoSuivButton48je suis invalide 
+@nextButton15je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired24je suis valide 
+@nextButton11je suis invalide 
+@prevButton20je suis invalide 
+@prevButton18je suis invalide 
+@nextSlideRequired16je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton23je suis invalide 
+@nextButton7je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton5je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@winPredButton33je suis invalide 
+@nextButton3je suis valide 
+@nextSlideRequired8je suis invalide 
+@winPredButton22je suis invalide 
+@prevSlideRequired10je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevButton4je suis invalide 
+@winSuivButton21je suis invalide 
+@winPredButton17je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired2je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton14je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextButton17je suis invalide 
+@nextSlideRequired37je suis valide 
+@nextButton15je suis invalide 
+@prevButton36je suis invalide 
+@winSuivButton51je suis invalide 
+@nextSlideRequired35je suis valide 
+@prevButton31je suis invalide 
+@winSuivButton45je suis invalide 
+@prevButton29je suis invalide 
+@nextButton11je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@nextSlideRequired30je suis valide 
+@winSuivButton39je suis valide 
+@prevButton28je suis invalide 
+@prevButton26je suis invalide 
+@nextButton7je suis invalide 
+@nextSlideRequired24je suis valide 
+@winSuivButton34je suis valide 
+@prevButton25je suis invalide 
+@prevButton20je suis invalide 
+@nextSlideRequired16je suis invalide 
+@winSuivButton27je suis valide 
+@prevButton18je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton9je suis invalide 
+@winPredButton33je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@prevButton5je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winSuivButton21je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@winPredButton22je suis invalide 
+@nextButton3je suis valide 
+@prevButton4je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winSuivButton14je suis invalide 
+@winPredButton17je suis invalide 
+@prevButton0je suis valide 
+@ArdinoSuivButton43je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@nextSlideRequired50je suis invalide 
+@winSuivButton34je suis valide 
+@nextSlideRequired42je suis valide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired41je suis valide 
+@winSuivButton27je suis valide 
+@nextSlideRequired37je suis valide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired35je suis valide 
+@winSuivButton23je suis invalide 
+@prevButton36je suis invalide 
+@nextSlideRequired30je suis valide 
+@prevButton31je suis invalide 
+@nextSlideRequired24je suis valide 
+@ArdinoPredButton46je suis invalide 
+@winSuivButton21je suis invalide 
+@prevButton29je suis invalide 
+@winPredButton33je suis invalide 
+@nextSlideRequired16je suis invalide 
+@prevButton28je suis invalide 
+@winPredButton22je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton26je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winPredButton17je suis invalide 
+@prevButton20je suis invalide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton0je suis valide 
+@nextButton32je suis invalide 
+@winPredButton12je suis invalide 
+@nextButton17je suis invalide 
+@nextButton15je suis invalide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextButton3je suis valide 
+@ArdinoSuivButton53je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@prevButton36je suis invalide 
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@nextSlideRequired42je suis valide 
+@winSuivButton44je suis invalide 
+@prevButton31je suis invalide 
+@winSuivButton40je suis valide 
+@nextSlideRequired41je suis valide 
+@winSuivButton39je suis valide 
+@prevButton29je suis invalide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@prevButton28je suis invalide 
+@nextSlideRequired37je suis valide 
+@ArdinoSuivButton53je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired35je suis valide 
+@prevButton25je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winSuivButton21je suis invalide 
+@nextSlideRequired30je suis valide 
+@nextButton32je suis invalide 
+@prevButton20je suis invalide 
+@nextButton17je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@nextSlideRequired24je suis valide 
+@prevButton18je suis invalide 
+@nextButton15je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton9je suis invalide 
+@nextButton11je suis invalide 
+@winPredButton33je suis invalide 
+@nextSlideRequired16je suis invalide 
+@winPredButton22je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextButton7je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton5je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevSlideRequired10je suis invalide 
+@winPredButton17je suis invalide 
+@prevButton4je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevButton0je suis valide 
+@nextSlideRequired1je suis invalide 
+@nextButton3je suis valide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired2je suis invalide 
+@winPredButton12je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextSlideRequired37je suis valide 
+@nextSlideRequired35je suis valide 
+@nextSlideRequired30je suis valide 
+@nextSlideRequired24je suis valide 
+@nextButton32je suis invalide 
+@nextSlideRequired16je suis invalide 
+@winSuivButton51je suis invalide 
+@prevButton36je suis invalide 
+@nextButton17je suis invalide 
+@prevButton31je suis invalide 
+@winSuivButton45je suis invalide 
+@nextSlideRequired13je suis invalide 
+@prevButton29je suis invalide 
+@nextButton15je suis invalide 
+@winSuivButton44je suis invalide 
+@prevButton28je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@winSuivButton27je suis valide 
+@winPredButton33je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextButton6je suis invalide 
+@prevButton26je suis invalide 
+@winPredButton22je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winSuivButton23je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton25je suis invalide 
+@nextButton3je suis valide 
+@ArdinoSuivButton47je suis invalide 
+@winPredButton17je suis invalide 
+@winSuivButton21je suis invalide 
+@prevButton20je suis invalide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton14je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired50je suis invalide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@nextSlideRequired42je suis valide 
+@prevButton26je suis invalide 
+@winPredButton33je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired41je suis valide 
+@prevButton20je suis invalide 
+@winPredButton22je suis invalide 
+@prevButton18je suis invalide 
+@nextSlideRequired37je suis valide 
+@ArdinoSuivButton53je suis invalide 
+@nextButton32je suis invalide 
+@winSuivButton51je suis invalide 
+@nextButton17je suis invalide 
+@nextButton15je suis invalide 
+@nextButton11je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@ArdinoSuivButton48je suis invalide 
+@nextSlideRequired35je suis valide 
+@prevButton9je suis invalide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@nextSlideRequired30je suis valide 
+@ArdinoPredButton52je suis invalide 
+@nextButton7je suis invalide 
+@winSuivButton27je suis valide 
+@winPredButton17je suis invalide 
+@prevButton5je suis invalide 
+@winSuivButton23je suis invalide 
+@nextButton6je suis invalide 
+@nextSlideRequired24je suis valide 
+@nextSlideRequired16je suis invalide 
+@nextSlideRequired13je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextButton3je suis valide 
+@ArdinoSuivButton47je suis invalide 
+@winSuivButton21je suis invalide 
+@prevButton4je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextSlideRequired1je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@winSuivButton14je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@winPredButton12je suis invalide 
+@prevButton0je suis valide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@prevButton36je suis invalide 
+@nextSlideRequired37je suis valide 
+@ArdinoSuivButton53je suis invalide 
+@winSuivButton44je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextButton32je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winSuivButton40je suis valide 
+@prevButton29je suis invalide 
+@nextSlideRequired30je suis valide 
+@nextButton17je suis invalide 
+@prevButton28je suis invalide 
+@winSuivButton39je suis valide 
+@nextSlideRequired24je suis valide 
+@ArdinoPredButton48je suis invalide 
+@prevButton26je suis invalide 
+@prevButton25je suis invalide 
+@prevButton20je suis invalide 
+@nextButton15je suis invalide 
+@nextSlideRequired16je suis invalide 
+@winSuivButton34je suis valide 
+@ArdinoSuivButton47je suis invalide 
+@prevButton18je suis invalide 
+@winPredButton33je suis invalide 
+@winSuivButton27je suis valide 
+@nextButton11je suis invalide 
+@prevButton9je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winPredButton22je suis invalide 
+@prevButton5je suis invalide 
+@nextButton7je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton4je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton21je suis invalide 
+@winPredButton17je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton14je suis invalide 
+@nextButton3je suis valide 
+@winPredButton12je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@nextSlideRequired42je suis valide 
+@prevButton29je suis invalide 
+@nextSlideRequired41je suis valide 
+@prevButton28je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@nextSlideRequired37je suis valide 
+@prevButton26je suis invalide 
+@winSuivButton51je suis invalide 
+@nextSlideRequired35je suis valide 
+@winPredButton33je suis invalide 
+@prevButton25je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@nextSlideRequired30je suis valide 
+@winSuivButton45je suis invalide 
+@nextButton32je suis invalide 
+@prevButton20je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextSlideRequired24je suis valide 
+@winSuivButton44je suis invalide 
+@nextButton17je suis invalide 
+@winPredButton22je suis invalide 
+@prevButton18je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired16je suis invalide 
+@prevButton9je suis invalide 
+@nextButton15je suis invalide 
+@winSuivButton40je suis valide 
+@nextSlideRequired13je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevButton5je suis invalide 
+@nextButton11je suis invalide 
+@winPredButton17je suis invalide 
+@winSuivButton39je suis valide 
+@ArdinoSuivButton43je suis invalide 
+@nextSlideRequired8je suis invalide 
+@prevButton4je suis invalide 
+@nextButton7je suis invalide 
+@prevSlideRequired10je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winSuivButton23je suis invalide 
+@winSuivButton21je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@nextSlideRequired1je suis invalide 
+@winPredButton12je suis invalide 
+@prevButton0je suis valide 
+@winSuivButton14je suis invalide 
+@nextButton3je suis valide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis valide 
+@nextSlideRequired41je suis valide 
+@nextButton32je suis invalide 
+@nextSlideRequired37je suis valide 
+@nextButton17je suis invalide 
+@nextSlideRequired35je suis valide 
+@nextSlideRequired30je suis valide 
+@prevButton36je suis invalide 
+@nextButton15je suis invalide 
+@prevButton31je suis invalide 
+@ArdinoPredButton52je suis invalide 
+@nextButton11je suis invalide 
+@prevButton29je suis invalide 
+@nextSlideRequired24je suis valide 
+@prevButton28je suis invalide 
+@prevButton26je suis invalide 
+@prevButton25je suis invalide 
+@prevButton20je suis invalide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@winSuivButton51je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis valide 
+@winSuivButton39je suis valide 
+@winSuivButton34je suis valide 
+@winSuivButton27je suis valide 
+@winSuivButton23je suis invalide 
+@winSuivButton21je suis invalide 
+@ArdinoSuivButton53je suis invalide 
+@nextSlideRequired16je suis invalide 
+@nextButton7je suis invalide 
+@winPredButton33je suis invalide 
+@nextButton6je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton22je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winSuivButton14je suis invalide 
+@nextButton3je suis valide 
+@prevButton4je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@winPredButton17je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevButton0je suis valide 
+@nextSlideRequired1je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( true, [@winSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoSuivButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoPredButton a envoyé un message de type NERIENFAIRE aux agents : @winSuivButton
+@nextSlideRequired50je suis invalide 
+@nextSlideRequired42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@prevButton36je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired35je suis invalide 
+@prevButton31je suis invalide 
+@nextButton17je suis invalide 
+@nextSlideRequired30je suis invalide 
+@prevButton29je suis invalide 
+@nextButton15je suis invalide 
+@ArdinoSuivButton48je suis invalide 
+@winSuivButton51je suis invalide 
+@nextSlideRequired24je suis invalide 
+@winSuivButton45je suis invalide 
+@winSuivButton44je suis invalide 
+@winSuivButton40je suis invalide 
+@winSuivButton39je suis invalide 
+@winSuivButton34je suis invalide 
+@ArdinoSuivButton47je suis invalide 
+@winSuivButton27je suis invalide 
+@nextSlideRequired16je suis invalide 
+@prevButton28je suis invalide 
+@nextButton11je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winSuivButton23je suis invalide 
+@nextSlideRequired8je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton21je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton25je suis invalide 
+@nextButton7je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton20je suis invalide 
+@nextButton6je suis invalide 
+@prevButton18je suis invalide 
+@nextButton3je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis valide 
+@winPredButton33je suis invalide 
+@winPredButton22je suis invalide 
+@winPredButton17je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoPredButton48je suis invalide 
+@ArdinoPredButton46je suis invalide 
+@ArdinoPredButton38je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @winSuivButton : ( true, [@ArdinoPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winSuivButton a envoyé un message de type SECONNECTERPHYSIQUEMENT aux agents : @ArdinoPredButton
+@@@@@ : @nextSlideRequired : ( true, [@ArdinoSuivButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type SECONNECTERPHYSIQUEMENT aux agents : @ArdinoSuivButton
+@@@@@ : @ArdinoSuivButton : ( true, [@nextSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@ @winSuivButtonlocalNbLink dans decide : 0 @@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoSuivButton a envoyé un message de type NERIENFAIRE aux agents : @winSuivButton
+@ArdinoSuivButton a envoyé un message de type SECONNECTER aux agents : @nextSlideRequired
+@@@@ @nextSlideRequiredlocalNbLink dans decide : 0 @@@@@
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoPredButton a envoyé un message de type SECONNECTER aux agents : @winSuivButton
+@ArdinoPredButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton36je suis invalide 
+@prevButton31je suis invalide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@winSuivButton45je suis invalide 
+@nextSlideRequired42je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton44je suis invalide 
+@nextSlideRequired41je suis invalide 
+@prevButton25je suis invalide 
+@winSuivButton40je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired35je suis invalide 
+@winSuivButton39je suis invalide 
+@nextButton32je suis invalide 
+@nextSlideRequired30je suis invalide 
+@prevButton20je suis invalide 
+@winSuivButton34je suis invalide 
+@nextSlideRequired24je suis invalide 
+@nextButton17je suis invalide 
+@prevButton18je suis invalide 
+@nextSlideRequired16je suis invalide 
+@winSuivButton27je suis invalide 
+@nextButton15je suis invalide 
+@prevButton9je suis invalide 
+@nextSlideRequired13je suis invalide 
+@nextButton11je suis invalide 
+@winSuivButton23je suis invalide 
+@winPredButton33je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextButton7je suis invalide 
+@winSuivButton21je suis invalide 
+@prevButton5je suis invalide 
+@winPredButton22je suis invalide 
+@nextSlideRequired1je suis invalide 
+@nextButton6je suis invalide 
+@prevButton4je suis invalide 
+@winPredButton17je suis invalide 
+@winSuivButton14je suis invalide 
+@nextButton3je suis valide 
+@winPredButton12je suis valide 
+@prevButton0je suis valide 
+@ArdinoPredButton48je suis valide 
+@ArdinoPredButton46je suis valide 
+@ArdinoPredButton38je suis invalide 
+@ArdinoSuivButton48je suis valide 
+@ArdinoSuivButton47je suis valide 
+@ArdinoSuivButton43je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis invalide 
+@@@@@ : @ArdinoSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoSuivButton a envoyé un message de type NERIENFAIRE aux agents : @winSuivButton
+@ArdinoPredButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@nextSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winSuivButton a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@winSuivButton a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@prevSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@winPredButton a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@ArdinoSuivButton a envoyé un message de type SECONNECTER aux agents : @nextSlideRequired
+@ArdinoPredButton a envoyé un message de type SECONNECTER aux agents : @winSuivButton
+@prevButton36je suis invalide 
+@winSuivButton45je suis valide 
+@nextSlideRequired42je suis invalide 
+@prevButton31je suis invalide 
+@winSuivButton44je suis valide 
+@nextSlideRequired41je suis invalide 
+@prevButton29je suis invalide 
+@nextSlideRequired37je suis invalide 
+@winSuivButton40je suis invalide 
+@nextSlideRequired35je suis invalide 
+@prevButton28je suis invalide 
+@winSuivButton39je suis invalide 
+@nextSlideRequired30je suis invalide 
+@prevButton26je suis invalide 
+@winSuivButton34je suis invalide 
+@winSuivButton27je suis invalide 
+@prevButton25je suis invalide 
+@nextSlideRequired24je suis invalide 
+@winSuivButton23je suis invalide 
+@winSuivButton21je suis invalide 
+@winPredButton33je suis invalide 
+@prevButton20je suis invalide 
+@nextSlideRequired16je suis valide 
+@winPredButton22je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton18je suis invalide 
+@prevButton9je suis invalide 
+@nextSlideRequired13je suis invalide 
+@winPredButton17je suis valide 
+@prevButton5je suis invalide 
+@nextSlideRequired8je suis invalide 
+@winPredButton12je suis invalide 
+@prevButton4je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevButton0je suis valide 
+@nextButton32je suis invalide 
+@nextButton17je suis invalide 
+@nextButton15je suis invalide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@nextButton3je suis valide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis valide 
+@ArdinoPredButton38je suis invalide 
+@ArdinoSuivButton43je suis invalide 
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@nextSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@@@@@ : @winSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@prevButton a envoyé un message de type REPONDRE aux agents : @winSuivButton
+@winSuivButton a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@winSuivButton a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winPredButton a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@winPredButton a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @ArdinoSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winSuivButton
+@ArdinoSuivButton a envoyé un message de type ANNONCER aux agents : 	@winPredButton	@prevSlideRequired	@nextSlideRequired	@winSuivButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoPredButton
+@prevSlideRequired a envoyé un message de type REPONDRE aux agents : @ArdinoSuivButton
+@@@@@ : @ArdinoPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoPredButton a envoyé un message de type ANNONCER aux agents : 	@winPredButton	@prevSlideRequired	@nextSlideRequired	@winSuivButton
+@nextSlideRequired42je suis invalide 
+@nextSlideRequired41je suis invalide 
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired35je suis invalide 
+@nextSlideRequired30je suis invalide 
+@nextSlideRequired24je suis invalide 
+@nextSlideRequired16je suis valide 
+@nextButton32je suis valide 
+@nextSlideRequired13je suis invalide 
+@nextButton17je suis valide 
+@prevButton36je suis invalide 
+@winSuivButton40je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextButton15je suis valide 
+@prevButton31je suis valide 
+@nextSlideRequired1je suis invalide 
+@winSuivButton39je suis invalide 
+@nextButton11je suis invalide 
+@prevButton29je suis invalide 
+@winSuivButton34je suis invalide 
+@nextButton7je suis invalide 
+@prevButton28je suis invalide 
+@winPredButton33je suis invalide 
+@nextButton6je suis invalide 
+@winSuivButton27je suis invalide 
+@prevButton26je suis invalide 
+@nextButton3je suis invalide 
+@winPredButton22je suis invalide 
+@prevButton25je suis invalide 
+@prevButton20je suis valide 
+@prevButton18je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@winSuivButton23je suis invalide 
+@winPredButton17je suis valide 
+@prevButton4je suis invalide 
+@winPredButton12je suis invalide 
+@ArdinoPredButton38je suis valide 
+@winSuivButton21je suis invalide 
+@prevButton0je suis invalide 
+@ArdinoSuivButton43je suis valide 
+@winSuivButton14je suis invalide 
+@prevSlideRequired10je suis invalide 
+@prevSlideRequired2je suis valide 
+@@@@@ : @ArdinoSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoSuivButton a envoyé un message de type ANNONCER aux agents : 	@winPredButton	@prevSlideRequired	@nextSlideRequired	@winSuivButton
+@@@@@ : @nextButton : ( true, [@prevSlideRequired  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @winSuivButton
+@nextButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @nextSlideRequired : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@nextSlideRequired a envoyé un message de type ANNONCER aux agents : 	@nextButton	@prevButton
+@@@@@ : @prevSlideRequired : ( true, [@nextButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @prevButton : ( true, [@winPredButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@prevButton a envoyé un message de type REPONDRE aux agents : @winSuivButton
+@prevButton a envoyé un message de type NERIENFAIRE aux agents : @nextSlideRequired
+@@@@@ : @winPredButton : ( true, [@prevButton  ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@ : @winSuivButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@winSuivButton a envoyé un message de type ANNONCER aux agents : 	@nextButton	@prevButton
+@@@@@ : @ArdinoPredButton : ( false, [ ] )  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ArdinoPredButton a envoyé un message de type ANNONCER aux agents : 	@winPredButton	@prevSlideRequired	@nextSlideRequired	@winSuivButton
+@nextSlideRequired37je suis invalide 
+@nextSlideRequired35je suis invalide 
+@nextSlideRequired30je suis invalide 
+@nextSlideRequired24je suis invalide 
+@prevButton36je suis invalide 
+@prevButton31je suis valide 
+@prevButton29je suis invalide 
+@prevButton28je suis invalide 
+@prevButton26je suis invalide 
+@nextButton32je suis valide 
+@nextButton17je suis valide 
+@prevButton25je suis invalide 
+@nextSlideRequired16je suis invalide 
+@nextButton15je suis valide 
+@winPredButton33je suis invalide 
+@nextButton11je suis invalide 
+@nextButton7je suis invalide 
+@nextButton6je suis invalide 
+@prevButton20je suis valide 
+@nextSlideRequired13je suis invalide 
+@nextButton3je suis invalide 
+@winPredButton22je suis invalide 
+@nextSlideRequired8je suis invalide 
+@nextSlideRequired1je suis invalide 
+@prevSlideRequired10je suis invalide 
+@winSuivButton34je suis invalide 
+@winSuivButton27je suis invalide 
+@winSuivButton23je suis invalide 
+@winSuivButton21je suis invalide 
+@winSuivButton14je suis invalide 
+@prevButton18je suis valide 
+@prevButton9je suis invalide 
+@prevButton5je suis invalide 
+@prevButton4je suis invalide 
+@prevButton0je suis invalide 
+@winPredButton17je suis invalide 
+@winPredButton12je suis valide 
+@prevSlideRequired2je su

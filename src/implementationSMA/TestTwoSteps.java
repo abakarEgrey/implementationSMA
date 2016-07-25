@@ -16,11 +16,11 @@ import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.ITwoStepsAgent;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.TwoStepsSystemStrategy;
 import implementationSMA.agents.AgentsConnectionToUPnP;
-import implementationSMA.agents.ArdinoInstance;
-import implementationSMA.agents.ButtonInstance;
-import implementationSMA.agents.ImpressInstance;
-import implementationSMA.agents.ServiceAgent;
-import implementationSMA.agents.Winamp;
+import implementationSMA.agents.InstanceAgents.ArdinoInstance;
+import implementationSMA.agents.InstanceAgents.ButtonInstance;
+import implementationSMA.agents.InstanceAgents.ImpressInstance;
+import implementationSMA.agents.InstanceAgents.Winamp;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 public class TestTwoSteps {
 
@@ -36,9 +36,10 @@ public class TestTwoSteps {
 		HashSet<ServiceAgent> buttonAgents = new HashSet<ServiceAgent>();
 
 		ImpressInstance impress = new ImpressInstance("ImpressJ", null, buttonAgents, agentsConnectionToUPnP, c);
+		impress.getServiceAgentList().get(0);
 		//initialisation de la pile
-		impress.getServiceAgentList().get(0).setPile(pile);
-		impress.getServiceAgentList().get(1).setPile(pile);
+		ServiceAgent.setPile(pile);
+		//impress.getServiceAgentList().get(1).setPile(pile);
 
 		HashSet<ServiceAgent> impressAgents = new HashSet<ServiceAgent>();
 		impressAgents.addAll(impress.getServiceAgentList());
@@ -46,13 +47,13 @@ public class TestTwoSteps {
 		ButtonInstance boutonPred = new ButtonInstance("@Button", null, "prevButton", impressAgents,
 				agentsConnectionToUPnP, c);
 		//ajout de la pile
-		boutonPred.getServiceAgentList().get(0).setPile(pile);
+		//boutonPred.getServiceAgentList().get(0).setPile(pile);
 		buttonAgents.addAll(boutonPred.getServiceAgentList());
 
 		ButtonInstance boutonSuiv = new ButtonInstance("@Button1", null, "nextButton", impressAgents,
 				agentsConnectionToUPnP, c);
 		
-		boutonSuiv.getServiceAgentList().get(0).setPile(pile);
+		//boutonSuiv.getServiceAgentList().get(0).setPile(pile);
 		
 		buttonAgents.addAll(boutonSuiv.getServiceAgentList());
 
@@ -89,10 +90,12 @@ public class TestTwoSteps {
 			hashSet.addAll(boutonPred.getServiceAgentList());
 			//SequentialSystemStrategyForOppoCompo sssfoc = new SequentialSystemStrategyForOppoCompo(hashSet);
 			TwoStepsForOppoCompo twoStepsForOppoCompo = new TwoStepsForOppoCompo(hashSet);
+			//ServiceAgent.getPile();
 			//first step
-			ServiceAgent.getPile().empiler("/*==============debut de l'execution du step-0====================*/");
+			Pile.empiler("/*==============debut de l'execution du step-0====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-0 terminé=======================*/");
+			//ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-0 terminé=======================*/");
 			hashSet.addAll(boutonSuiv.getServiceAgentList());
 			hashSet.addAll(impress.getServiceAgentList());
 			twoStepsForOppoCompo.addAgents(hashSet);
@@ -101,27 +104,37 @@ public class TestTwoSteps {
 				twoStepsForOppoCompo.doStep();
 			}*/
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-1====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-1====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-1 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-1 terminé====================*/");
+			ServiceAgent.getPile();
 			//sssfoc.doStep();
 			/*hashSet.addAll(boutonSuiv.getServiceAgentList());
 			hashSet.addAll(impress.getServiceAgentList());
 			twoStepsForOppoCompo.addAgents(hashSet);*/
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-2====================*/");
+			Pile.empiler("\n\n/*==============debut de l'execution du step-2====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-2 terminé====================*/");
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-3====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-2 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-3====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-3 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-3 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-4====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-4====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-4 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-4 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-5====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-5====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step- terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step- terminé====================*/");
 		
 			/*sssfoc.doStep();*/
 			boutonPred.disappear();
@@ -129,8 +142,10 @@ public class TestTwoSteps {
 			//creation et apparition de winamp
 			Winamp winampComponent = new Winamp("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
 			
-			winampComponent.getServiceAgentList().get(0).setPile(pile);
-			winampComponent.getServiceAgentList().get(1).setPile(pile);
+			winampComponent.getServiceAgentList().get(0);
+			ServiceAgent.setPile(pile);
+			winampComponent.getServiceAgentList().get(1);
+			ServiceAgent.setPile(pile);
 			
 			pause(5000);
 			String winamp = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
@@ -141,25 +156,35 @@ public class TestTwoSteps {
 			impressAgents.addAll(winampComponent.getServiceAgentList());
 			hashSet.addAll(winampComponent.getServiceAgentList());
 			twoStepsForOppoCompo.addAgents(hashSet);
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-6====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-6====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-6 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-6 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-7====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-7====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-7 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-7 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-8====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-8====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-8 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-8 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-8====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-8====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-8 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-8 terminé====================*/");
 			
-			ServiceAgent.getPile().empiler("\n\n/*==============debut de l'execution du step-9====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("\n\n/*==============debut de l'execution du step-9====================*/");
 			twoStepsForOppoCompo.doStep();
-			ServiceAgent.getPile().empiler("/*==============execution du step-9 terminé====================*/");
+			ServiceAgent.getPile();
+			Pile.empiler("/*==============execution du step-9 terminé====================*/");
 			
 //			boolean arret = true;
 //			int nbIter = 0;
@@ -177,8 +202,10 @@ public class TestTwoSteps {
 			ardinoDestinationAgents.addAll(winampComponent.getServiceAgentList());
 			ArdinoInstance ardinoInstance = new ArdinoInstance("ArdinoComponent", null, ardinoDestinationAgents, agentsConnectionToUPnP, c);
 			
-			ardinoInstance.getServiceAgentList().get(0).setPile(pile);
-			ardinoInstance.getServiceAgentList().get(1).setPile(pile);
+			ardinoInstance.getServiceAgentList().get(0);
+			ServiceAgent.setPile(pile);
+			ardinoInstance.getServiceAgentList().get(1);
+			ServiceAgent.setPile(pile);
 			
 			pause(5000);
 			String ardino = c.createBeanAtPos("Ardino Component", "WComp.UPnPDevice.Arduino_Button", 200, 100);
@@ -216,8 +243,10 @@ public class TestTwoSteps {
 			try {
 				BufferedWriter out =  new BufferedWriter(new FileWriter("fichOut.txt"));
 				BufferedWriter out1 =  new BufferedWriter(new FileWriter("fichArobase.txt"));
-				while (!ServiceAgent.getPile().isEmpty()){
-					String strToDisplay = ServiceAgent.getPile().depiler();
+				ServiceAgent.getPile();
+				while (!Pile.isEmpty()){
+					ServiceAgent.getPile();
+					String strToDisplay = Pile.depiler();
 					if (!strToDisplay.contains("display")){
 						out.write("\t \t" + strToDisplay + "\n");
 						if (strToDisplay.startsWith("@")){
