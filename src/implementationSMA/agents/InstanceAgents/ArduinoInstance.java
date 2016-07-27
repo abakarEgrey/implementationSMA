@@ -18,7 +18,7 @@ import implementationSMA.enumeration.InterfaceType;
  * @author amahamat
  *
  */
-public class ArdinoInstance extends InstanceAgent {
+public class ArduinoInstance extends InstanceAgent {
 	
 	private String idServiceAgent;
 	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
@@ -33,7 +33,7 @@ public class ArdinoInstance extends InstanceAgent {
 	 * @param agentsConnectionToUPnP
 	 * @param container
 	 */
-	public ArdinoInstance(String id, Routage routage, HashSet<ServiceAgent> hashSet,
+	public ArduinoInstance(String id, Routage routage, HashSet<ServiceAgent> hashSet,
 			AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
 		super(id, routage, agentsConnectionToUPnP, container);
 		this.id = id;

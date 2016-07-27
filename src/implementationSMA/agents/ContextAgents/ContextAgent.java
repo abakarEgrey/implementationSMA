@@ -9,6 +9,7 @@ import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
 import implementationSMA.Pile;
+import implementationSMA.TestUI;
 import implementationSMA.agents.Agent;
 import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import implementationSMA.enumeration.Action;
@@ -238,14 +239,13 @@ public class ContextAgent extends Agent {
 			// Neightbours
 			// TODO to change change.........................................
 			ArrayList<Pair<ServiceAgent, Pair<Boolean, ArrayList<ServiceAgent>>>> _actualNeighboursState = getActualNeighboursState();
-			if (isNeighboursStateValid(_actualNeighboursState)) {
-
+			if (isNeighboursStateValid(_actualNeighboursState)) {				
 				ArrayList<ServiceAgentMessage> mReceivedByAS = this.serviceAgent.getServiceMessages();
-
+				
 				// validité de l'agent contexte lorsque l'agent service effectue
 				// une
 				// annonce pour la 2e fois
-				if (mReceivedByAS.isEmpty()) {
+				if (mReceivedByAS.isEmpty()) {					
 					// regarder les caractéristiques de l'agent service, s'il y
 					// a un
 					// changement ou pas. L'etat de l'agent service
@@ -253,11 +253,10 @@ public class ContextAgent extends Agent {
 					// isBasicCriterionValid et les etats des voisins par la
 					// methode isNeighboursStateValid
 					if (isSenderTypeAndMessageTypeValid()) {
-						isValid = true;
-
+						isValid = true;						
 					}
 
-				} else {
+				} else {					
 					for (ServiceAgentMessage saMessage : mReceivedByAS) {
 						// Read every messages of its service agent
 						// If valid stock the message is a list to answer to it
@@ -267,7 +266,7 @@ public class ContextAgent extends Agent {
 							// The context agent is valid for at least this
 							// message
 							isValid = true;
-							listValidatingSAMessage.add(saMessage);
+							listValidatingSAMessage.add(saMessage);																
 						}
 					}
 
@@ -275,11 +274,10 @@ public class ContextAgent extends Agent {
 
 			}
 
-		}
+		}		
 		System.out.println("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
 		ServiceAgent.getPile();
-		Pile
-				.empiler("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
+		Pile.empiler("perceive : " + this.getId() + " Agent Contexte: mon execution est terminée");
 	}
 
 	private boolean isSenderTypeAndMessageTypeValid() {
@@ -296,8 +294,7 @@ public class ContextAgent extends Agent {
 	protected void decide() {
 		System.out.println("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		ServiceAgent.getPile();
-		Pile
-				.empiler("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
+		Pile.empiler("decide: " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		// A contextAgent may be valid for multiple messages, for all those
 		// messages he will send a proposition to its service agent
 		// No real decision
@@ -311,8 +308,8 @@ public class ContextAgent extends Agent {
 	protected void act() {
 		System.out.println("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
 		ServiceAgent.getPile();
-		Pile.empiler("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");
-		if (isValid) {
+		Pile.empiler("act : " + this.getId() + " Agent Contexte: je suis en cours d'exécution");		
+		if (isValid) {			
 			System.out.println(this.getId() + "je suis valide ");
 			ServiceAgent.getPile();
 			Pile.empiler(this.getId() + "je suis valide ");
@@ -330,7 +327,7 @@ public class ContextAgent extends Agent {
 					messageBox.send(msg, refAgentService);
 				}
 				listValidatingSAMessage.clear();
-			}
+			}			
 		} else {
 			System.out.println(this.getId() + "je suis invalide ");
 			ServiceAgent.getPile();
@@ -437,7 +434,7 @@ public class ContextAgent extends Agent {
 				}
 			}
 			return isV;
-		}
+		}		
 		return true;
 	}
 

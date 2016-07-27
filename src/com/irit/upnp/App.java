@@ -8,6 +8,7 @@ public class App {
     {
         ContainerWComp c = new ContainerWComp("Container1_Structural_0");
         
+        
         try {
         	
         	pause(20000);

@@ -16,6 +16,7 @@ import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
 import implementationSMA.Pair;
 import implementationSMA.Pile;
+import implementationSMA.TestUI;
 import implementationSMA.agents.Agent;
 import implementationSMA.agents.ContextAgents.ContextAgent;
 import implementationSMA.agents.InstanceAgents.InstanceAgent;
@@ -410,7 +411,7 @@ public class ServiceAgent extends Agent {
 	 * 
 	 */
 	public synchronized void decrementNbLink() {
-		this.nbLink--;
+		this.nbLink--;		
 	}
 
 	// Life Cycle
@@ -423,8 +424,8 @@ public class ServiceAgent extends Agent {
 		// serviceAgentMessages = this.msgBoxHAgent.getSaMessages();
 		// vider les listes des servicesAgentsMessages et actionsChoosedByItSelf
 		// de la cycle precedente . Creer une fonction qui vide toutes les
-		// structures non écrasés
 		clearSAMAndCAPList();
+		// structures non écrasés
 
 		// mReceived contient tous les messages envoyés par ses agents contextes
 		// et par les autres agents services
@@ -888,10 +889,11 @@ public class ServiceAgent extends Agent {
 					this.actionsChoosedByItSelf.add(listCAP);
 					break;
 				case REPONDRE:
-					// tester si la cardinalité est atteint: pour le test du sma
+					//la reception d'une reponse à une annonce
+					// tester si la cardinalité est atteint: pour le test du sma					
 					if (isConnectionRemain) {
 						cap = new ContextAgentProposition(null, Action.SECONNECTER, sAM);
-						// this.nbLink++;
+						// this.nbLink++;						
 						localNbLink++;
 					} else {
 						cap = new ContextAgentProposition(null, Action.NERIENFAIRE, sAM);
@@ -903,10 +905,9 @@ public class ServiceAgent extends Agent {
 					this.actionsChoosedByItSelf.add(listCAP);
 					// this.actionsChoosedByItSelf.add(Action.SECONNECTER);
 					break;
-				case SECONNECTER:
-
-					// tester si la cardinalité est atteint: pour le test du sma
-					if (isConnectionRemain) {
+				case SECONNECTER:					
+					// tester si la cardinalité est atteint: pour le test du sma					
+					if (isConnectionRemain) {						
 						cap = new ContextAgentProposition(null, Action.SECONNECTERPHYSIQUEMENT, sAM);
 						Pile.empiler("@@@@ " + this.id + "localNbLink dans decide : " + localNbLink + " @@@@@");
 						// this.nbLink++;
@@ -1451,7 +1452,7 @@ public class ServiceAgent extends Agent {
 		System.out.println("act: " + this.getId() + " Agent service: je suis en cours d'execution");
 		Pile.empiler("act: " + this.getId() + " Agent service: je suis en cours d'execution");
 		// TODO Auto-generated method stub
-
+		
 		if (!this.choosenActions.isEmpty()) {
 			// number of connection to rest
 			int nbConnectionRemain = this.cardinality - this.nbLink;
@@ -1466,6 +1467,7 @@ public class ServiceAgent extends Agent {
 			// id de l'agent service qui envoyé le message
 			String senderId = "";
 			int index = 0;
+			
 			// tant que la cardinalité < au nombre des connections effectuées et
 			// la liste des propositions n'est totalement parcourue
 			while (nbConnectionRemain > 0 && (index < this.choosenActions.size())) { // while
@@ -1484,6 +1486,7 @@ public class ServiceAgent extends Agent {
 																						// end
 																						// of
 																						// this.choosenActions
+				
 				// treat actions when the service agent have some connections
 				// available
 				// une liste contenant l'ensemble des propositions pour un
@@ -1491,8 +1494,21 @@ public class ServiceAgent extends Agent {
 				cAA = this.choosenActions.get(index);
 				ServiceAgentMessage nullSAM = cAA.get(0).getServiceAgentMessage();
 				if (nullSAM != null) {
-					senderId = cAA.get(0).getServiceAgentMessage().getServiceAgent().getId();
+					senderId = cAA.get(0).getServiceAgentMessage().getServiceAgent().getId();					
 				}
+				//TODO 
+				/*
+				   	String action = "";
+					switch(cAA.get(0).getAction())
+					{
+					case SECONNECTER: action = "SECONNECTER" ; break;
+					case SEDECONNECTER:  action = "SEDECONNECTER" ; break;
+					case SECONNECTERPHYSIQUEMENT:  action = "SECONNECTERPHYSIQUEMENT" ; break;
+					case REPONDRE: action = "REPONDRE" ;  break;
+					case NERIENFAIRE: action = "NERIENFAIRE" ; break;
+					case ANNONCER: action = "ANNONCER" ; break;
+					}
+				*/				
 
 				if (this.nbOfConnectionAndAverageTime.containsKey(senderId)) {
 					connAndTime = this.nbOfConnectionAndAverageTime.get(senderId);
@@ -1884,6 +1900,10 @@ public class ServiceAgent extends Agent {
 			if (this.nbLink >= this.cardinality) {
 				actionToBeExecute = Action.NERIENFAIRE;
 			}
+			else {
+				actionToBeExecute = Action.SECONNECTER;
+			}
+			
 			sAM = new ServiceAgentMessage(this.cardinality, this.instanceAgent.getType().toString(),
 					MessageType.SAMESSAGE, this.isConnected, nbOfConnection, averageTOConnexion, this,
 					actionToBeExecute);
@@ -1897,6 +1917,12 @@ public class ServiceAgent extends Agent {
 					+ senderSAM.getServiceAgent().getId());
 			break;
 		case SECONNECTER:
+			if (this.nbLink >= this.cardinality) {
+				actionToBeExecute = Action.NERIENFAIRE;
+			}
+			else {
+				actionToBeExecute = Action.SECONNECTER;
+			}
 			// build the connection message to be sended
 			sAM = new ServiceAgentMessage(this.cardinality, this.instanceAgent.getType().toString(),
 					MessageType.SAMESSAGE, this.isConnected, nbOfConnection, averageTOConnexion, this,
@@ -1914,13 +1940,15 @@ public class ServiceAgent extends Agent {
 			break;
 		case SECONNECTERPHYSIQUEMENT:
 			// build the connection message to be sended
-
+			TestUI.smaInterface.showConnexion("SA 1943", getId());
 			if (senderSAM.getServiceAgent().incrementNbLink()) {
 				sAM = new ServiceAgentMessage(this.cardinality, this.instanceAgent.getType().toString(),
 						MessageType.SAMESSAGE, this.isConnected, nbOfConnection, averageTOConnexion, this,
 						actionToBeExecute);
 				// incremente the number of link
 				// this.nbLink++;
+				
+				
 				this.incrementNbLink();
 				nbConnectionRemain--;
 

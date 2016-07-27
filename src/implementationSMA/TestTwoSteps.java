@@ -16,7 +16,7 @@ import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.ITwoStepsAgent;
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.TwoStepsSystemStrategy;
 import implementationSMA.agents.AgentsConnectionToUPnP;
-import implementationSMA.agents.InstanceAgents.ArdinoInstance;
+import implementationSMA.agents.InstanceAgents.ArduinoInstance;
 import implementationSMA.agents.InstanceAgents.ButtonInstance;
 import implementationSMA.agents.InstanceAgents.ImpressInstance;
 import implementationSMA.agents.InstanceAgents.Winamp;
@@ -56,6 +56,18 @@ public class TestTwoSteps {
 		//boutonSuiv.getServiceAgentList().get(0).setPile(pile);
 		
 		buttonAgents.addAll(boutonSuiv.getServiceAgentList());
+		
+		ButtonInstance boutonPred1 = new ButtonInstance("@Button2", null, "prevButton1", impressAgents,
+				agentsConnectionToUPnP, c);
+		buttonAgents.addAll(boutonPred1.getServiceAgentList());
+		
+		ButtonInstance boutonSuiv1 = new ButtonInstance("@Button3", null, "nextButton1", impressAgents,
+				agentsConnectionToUPnP, c);
+		buttonAgents.addAll(boutonSuiv1.getServiceAgentList());
+		
+		ButtonInstance boutonPred2 = new ButtonInstance("@Button4", null, "prevButton2", impressAgents,
+				agentsConnectionToUPnP, c);
+		buttonAgents.addAll(boutonPred2.getServiceAgentList());
 
 		impress.setReceiverSAList(buttonAgents);
 		
@@ -66,6 +78,12 @@ public class TestTwoSteps {
 			String bouton1 = c.createBeanAtPos("Bouton 1", "System.Windows.Forms.Button", 600, 400);
 			//pause(5000);
 			String bouton2 = c.createBeanAtPos("Bouton 2", "System.Windows.Forms.Button", 200, 400);
+			
+			String bouton3 = c.createBeanAtPos("Bouton 3", "System.Windows.Forms.Button", 200, 400);
+			
+			String bouton4 = c.createBeanAtPos("Bouton 4", "System.Windows.Forms.Button", 200, 400);
+			
+			String bouton5 = c.createBeanAtPos("Bouton 5", "System.Windows.Forms.Button", 200, 400);
 			//pause(5000);
 			// creation de l'ImpressJ
 			String impressJS = c.createBeanAtPos("ImpressJS", "WComp.UPnPDevice.ImpressJS", 400, 100);
@@ -77,6 +95,9 @@ public class TestTwoSteps {
 
 			agentsConnectionToUPnP.addServiceAgent(boutonPred.getServiceAgentList().get(0), "Bouton 1");
 			agentsConnectionToUPnP.addServiceAgent(boutonSuiv.getServiceAgentList().get(0), "Bouton 2");
+			agentsConnectionToUPnP.addServiceAgent(boutonPred1.getServiceAgentList().get(0), "Bouton 3");
+			agentsConnectionToUPnP.addServiceAgent(boutonSuiv1.getServiceAgentList().get(0), "Bouton 4");
+			agentsConnectionToUPnP.addServiceAgent(boutonPred2.getServiceAgentList().get(0), "Bouton 5");
 
 			// debut sma
 			/*
@@ -97,6 +118,9 @@ public class TestTwoSteps {
 			//ServiceAgent.getPile();
 			Pile.empiler("/*==============execution du step-0 terminé=======================*/");
 			hashSet.addAll(boutonSuiv.getServiceAgentList());
+			hashSet.addAll(boutonPred1.getServiceAgentList());
+			hashSet.addAll(boutonSuiv1.getServiceAgentList());
+			hashSet.addAll(boutonPred2.getServiceAgentList());
 			hashSet.addAll(impress.getServiceAgentList());
 			twoStepsForOppoCompo.addAgents(hashSet);
 			/*boolean arret = true;
@@ -200,7 +224,7 @@ public class TestTwoSteps {
 			HashSet<ServiceAgent> ardinoDestinationAgents = new HashSet<>();
 			ardinoDestinationAgents.addAll(impressAgents);
 			ardinoDestinationAgents.addAll(winampComponent.getServiceAgentList());
-			ArdinoInstance ardinoInstance = new ArdinoInstance("ArdinoComponent", null, ardinoDestinationAgents, agentsConnectionToUPnP, c);
+			ArduinoInstance ardinoInstance = new ArduinoInstance("ArdinoComponent", null, ardinoDestinationAgents, agentsConnectionToUPnP, c);
 			
 			ardinoInstance.getServiceAgentList().get(0);
 			ServiceAgent.setPile(pile);

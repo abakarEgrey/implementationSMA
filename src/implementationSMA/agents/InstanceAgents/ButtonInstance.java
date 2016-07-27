@@ -8,6 +8,7 @@ import com.irit.upnp.ContainerWComp;
 import exceptions.RemovedLink;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
+import implementationSMA.OnRemovedListener;
 import implementationSMA.Pair;
 import implementationSMA.agents.AgentsConnectionToUPnP;
 import implementationSMA.agents.Routage;
@@ -28,6 +29,8 @@ public class ButtonInstance extends InstanceAgent {
 	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
 
 	private AgentsConnectionToUPnP agentsConnectionToUPnP;
+	
+	private ArrayList<OnRemovedListener> onRemovedListeners;
 
 	/**
 	 * 
@@ -48,6 +51,7 @@ public class ButtonInstance extends InstanceAgent {
 		// this.agentsConnectionToUPnP = agentsConnectionToUPnP;
 		// this.container = container;
 		// this.type = "Bouton";
+		this.onRemovedListeners = new ArrayList<>();
 	}
 
 	public ContainerWComp getContainer() {
@@ -182,5 +186,24 @@ public class ButtonInstance extends InstanceAgent {
 		}
 
 	}
+	
+	public void addOnRemovedListener(OnRemovedListener o)
+	{
+		this.onRemovedListeners.add(o);
+	}
+	
+	public void removeOnRemovedListener(OnRemovedListener o)
+	{
+		this.onRemovedListeners.remove(o);
+	}
+	
+	public void destroy()
+	{
+		this.disappear();
+		for(OnRemovedListener listener : onRemovedListeners)
+			listener.onRemoved(this);
+	}
+	
+	
 
 }

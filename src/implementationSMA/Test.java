@@ -77,9 +77,14 @@ public class Test {
 			pause(5000);
 			// creation de l'ImpressJ
 			String impressJS = c.createBeanAtPos("ImpressJS", "WComp.UPnPDevice.ImpressJS", 400, 100);
+			String joystickArd = c.createBeanAtPos("Arduino Joystick", "WComp.UPnPDevice.Arduino_Joystick", 200, 200);
+			String winamp1 = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
 
 			@SuppressWarnings("unused")
 			String linkBut1 = c.createLink("Bouton 1", "Click", "ImpressJS", "Next", "");
+			String linkDown = c.createLink("Arduino Joystick", "X_Down_Event", "Winamp", "VolumeDown", "");
+			
+			c.removeBean("Bouton 1");
 			// ajout dans le map
 
 			agentsConnectionToUPnP.addServiceAgent(impress.getServiceAgentList().get(0), "ImpressJS");

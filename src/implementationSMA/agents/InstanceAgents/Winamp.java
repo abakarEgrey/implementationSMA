@@ -58,10 +58,17 @@ public class Winamp extends InstanceAgent {
 				InterfaceType.REQUIRED);
 		ServiceAgent winSuivButton = new ServiceAgent("@winSuivButton", this, 1, this.hashSet, "Click", "NextSong",
 				InterfaceType.REQUIRED);
-		//a creer prochainement les boutons volumes
-		
+
+		ServiceAgent winIncreaseVolumeButton = new ServiceAgent("@winIncVolButton", this, 1, this.hashSet, "Click",
+				"VolumeUp", InterfaceType.REQUIRED);
+		ServiceAgent winDecreseVolumeButton = new ServiceAgent("@winDecVolButton", this, 1, this.hashSet, "Click",
+				"VolumeDown", InterfaceType.REQUIRED);
+		// a creer prochainement les boutons volumes
+
 		this.serviceAgents.add(winPredButton);
 		this.serviceAgents.add(winSuivButton);
+		/*this.serviceAgents.add(winIncreaseVolumeButton);
+		this.serviceAgents.add(winDecreseVolumeButton);*/
 
 	}
 
@@ -85,6 +92,5 @@ public class Winamp extends InstanceAgent {
 		}
 
 	}
-	
-	
+
 }
