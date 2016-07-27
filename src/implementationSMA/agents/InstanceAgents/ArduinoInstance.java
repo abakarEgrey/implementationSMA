@@ -53,7 +53,7 @@ public class ArduinoInstance extends InstanceAgent {
 	public AgentsConnectionToUPnP getAgentsConnectionToUPnP() {
 		return agentsConnectionToUPnP;
 	}
-	/**
+	/** 
 	 * 
 	 */
 	private void createWinampButtonsAgents() {
