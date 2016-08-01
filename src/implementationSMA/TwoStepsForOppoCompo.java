@@ -1,9 +1,11 @@
 package implementationSMA;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
@@ -18,6 +20,7 @@ import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.BadStepRuntimeExcep
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.ITwoStepsAgent;
 import fr.irit.smac.libs.tooling.scheduling.impl.system.AbstractSystemStrategy;
 import fr.irit.smac.libs.tooling.scheduling.impl.system.SynchronizedSystemStrategy;
+import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 public class TwoStepsForOppoCompo extends AbstractSystemStrategy<ITwoStepsAgent> {
 
@@ -274,6 +277,16 @@ public class TwoStepsForOppoCompo extends AbstractSystemStrategy<ITwoStepsAgent>
             pendingRemovedAgents.add(agent);
 
         }
+    }
+    
+    public void setAgents(Collection<ITwoStepsAgent> agents){
+    	this.agents = (Set<ITwoStepsAgent>) agents;
+    }
+    
+    public void removeAllAgents(ArrayList<ServiceAgent> arrayList){
+    	for (ITwoStepsAgent itsa : arrayList){
+    		this.removeAgent(itsa);
+    	}
     }
 
 }

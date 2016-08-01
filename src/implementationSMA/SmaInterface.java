@@ -20,6 +20,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import fr.irit.smac.libs.tooling.scheduling.contrib.twosteps.BadStepRuntimeException;
+import implementationSMA.Vue.MyListModel;
 
 public class SmaInterface extends JFrame implements Runnable {
 
@@ -36,13 +37,13 @@ public class SmaInterface extends JFrame implements Runnable {
 	private String item;
 	private JList<String> jList1;
 	private JScrollPane jScrollPane1;
-	private DefaultListModel<String> listModel;
+	private MyListModel listModel;
 	private String instanceName;
 
 	public SmaInterface(String title) throws HeadlessException {
 		super(title);
 		// TODO Auto-generated constructor stub
-		listModel = new DefaultListModel<String>();
+		listModel = new MyListModel();
 		jList1 = new JList<>(listModel);
 		jList1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		jScrollPane1 = new JScrollPane(jList1);
@@ -126,10 +127,11 @@ public class SmaInterface extends JFrame implements Runnable {
 		});
 
 		jList1.addListSelectionListener(new ListSelectionListener() {
-			
+
 			@Override
 			public void valueChanged(ListSelectionEvent e) {
-				instanceName = e.getSource().toString();
+				if(e.getFirstIndex() >= 0)
+				instanceName = jList1.getSelectedValue().toString();
 			}
 		});
 		// jList1.setModel(this.listModel);
@@ -176,6 +178,11 @@ public class SmaInterface extends JFrame implements Runnable {
 
 	}
 
+	
+	public JList<String> getjList1() {
+		return jList1;
+	}
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -201,12 +208,17 @@ public class SmaInterface extends JFrame implements Runnable {
 	}
 
 	private void removeComponentActionPerformed(java.awt.event.ActionEvent evt) {
-		// TODO add your handling code here:
-		String componentName = (String) jComboBox1.getSelectedItem();
-		// supprimer le composant
-		System.out.println("MaFenetre.removeComponentActionPerformed()");
-		// supression de l'index
-		removeItem(componentName);
+		if (instanceName != null) {
+			String name = instanceName;
+			TestUI.getInstance().removeAgent(instanceName);
+			
+			jList1.setSelectedIndex(-1);
+			if(name != null)
+			listModel.removeElement(name);	
+			this.invalidate();
+			this.repaint();
+		}
+		instanceName = null;
 
 	}
 
@@ -227,7 +239,10 @@ public class SmaInterface extends JFrame implements Runnable {
 		 */
 		removeItem(jComboBox1.getSelectedItem());
 	}
-
+	/**
+	 * 
+	 * @param evt
+	 */
 	private void addCompnentActionPerformed(java.awt.event.ActionEvent evt) {
 		// TODO add your handling code here:
 		String componentName = (String) jComboBox1.getSelectedItem();
@@ -276,11 +291,15 @@ public class SmaInterface extends JFrame implements Runnable {
 		}
 
 	}
-
+	/**
+	 * 
+	 * @param s
+	 */
 	public void addInstance(String s) {
 		Runnable code = new Runnable() {
 			public void run() {
 				listModel.addElement(s);
+				//jList1 = new JList<String>(listModel);
 			}
 		};
 
@@ -290,4 +309,12 @@ public class SmaInterface extends JFrame implements Runnable {
 			SwingUtilities.invokeLater(code);
 		}
 	}
+	
+	/**
+	 * 
+	 */
+	public void update(int firstIndex, int lastIndex) {
+        this.listModel.fireContentsChanged(this, firstIndex, lastIndex);
+    }
+	
 }

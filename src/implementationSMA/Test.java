@@ -16,7 +16,7 @@ import fr.irit.smac.libs.tooling.scheduling.IAgentStrategy;
 import implementationSMA.agents.AgentsConnectionToUPnP;
 import implementationSMA.agents.InstanceAgents.ButtonInstance;
 import implementationSMA.agents.InstanceAgents.ImpressInstance;
-import implementationSMA.agents.InstanceAgents.Winamp;
+import implementationSMA.agents.InstanceAgents.WinampInstance;
 import implementationSMA.agents.ServiceAgents.ServiceAgent;
 import fr.irit.smac.libs.tooling.messaging.impl.AgentMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.BasicMutableDirectory;
@@ -62,29 +62,29 @@ public class Test {
 				agentsConnectionToUPnP, c);
 		buttonAgents.addAll(boutonPred.getServiceAgentList());
 
-		ButtonInstance boutonSuiv = new ButtonInstance("@Button1", null, "nextButton", impressAgents,
+		ButtonInstance boutonSuiv = new ButtonInstance("@ButtonS", null, "nextButton", impressAgents,
 				agentsConnectionToUPnP, c);
 		buttonAgents.addAll(boutonSuiv.getServiceAgentList());
 
 		impress.setReceiverSAList(buttonAgents);
 
 		try {
-			pause(2000);
+			//pause(2000);
 			// creation des 2 boutons de manipuler l'ImpressJ
 			String bouton1 = c.createBeanAtPos("Bouton 1", "System.Windows.Forms.Button", 600, 400);
-			pause(5000);
+			//pause(5000);
 			String bouton2 = c.createBeanAtPos("Bouton 2", "System.Windows.Forms.Button", 200, 400);
-			pause(5000);
+			//pause(5000);
 			// creation de l'ImpressJ
 			String impressJS = c.createBeanAtPos("ImpressJS", "WComp.UPnPDevice.ImpressJS", 400, 100);
 			String joystickArd = c.createBeanAtPos("Arduino Joystick", "WComp.UPnPDevice.Arduino_Joystick", 200, 200);
 			String winamp1 = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
 
-			@SuppressWarnings("unused")
-			String linkBut1 = c.createLink("Bouton 1", "Click", "ImpressJS", "Next", "");
-			String linkDown = c.createLink("Arduino Joystick", "X_Down_Event", "Winamp", "VolumeDown", "");
+			//@SuppressWarnings("unused")
+			//String linkBut1 = c.createLink("Bouton 1", "Click", "ImpressJS", "Next", "");
+			//String linkDown = c.createLink("Arduino Joystick", "X_Down_Event", "Winamp", "VolumeDown", "");
 			
-			c.removeBean("Bouton 1");
+			//c.removeBean("Bouton 1");
 			// ajout dans le map
 
 			agentsConnectionToUPnP.addServiceAgent(impress.getServiceAgentList().get(0), "ImpressJS");
@@ -261,9 +261,9 @@ public class Test {
 
 			System.out.println("/*====================execution du step-11   terminé================*/");
 			// finsma
-			boutonPred.disappear();
+			boutonSuiv.disappear();
 
-			Winamp winampComponent = new Winamp("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
+			WinampInstance winampComponent = new WinampInstance("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
 			String winamp = c.createBeanAtPos("Winamp", "WComp.UPnPDevice.WinampRemote", 400, 200);
 			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(0), "Winamp");
 			agentsConnectionToUPnP.addServiceAgent(winampComponent.getServiceAgentList().get(1), "Winamp");
@@ -272,7 +272,7 @@ public class Test {
 			impressAgents.addAll(winampComponent.getServiceAgentList());
 			System.out.println("/*====================debut de l'execution du step-11bis==============*/");
 			boutonPred.getServiceAgentList().get(0).nextStep();
-			boutonSuiv.nextStep();
+			//boutonSuiv.nextStep();
 			for (int i = 0; i < impress.getServiceAgentList().size(); i++) {
 				impress.getServiceAgentList().get(i).nextStep();
 				winampComponent.getServiceAgentList().get(i).nextStep();

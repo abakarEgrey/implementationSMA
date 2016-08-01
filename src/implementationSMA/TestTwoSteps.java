@@ -19,7 +19,7 @@ import implementationSMA.agents.AgentsConnectionToUPnP;
 import implementationSMA.agents.InstanceAgents.ArduinoInstance;
 import implementationSMA.agents.InstanceAgents.ButtonInstance;
 import implementationSMA.agents.InstanceAgents.ImpressInstance;
-import implementationSMA.agents.InstanceAgents.Winamp;
+import implementationSMA.agents.InstanceAgents.WinampInstance;
 import implementationSMA.agents.ServiceAgents.ServiceAgent;
 
 public class TestTwoSteps {
@@ -164,7 +164,7 @@ public class TestTwoSteps {
 			boutonPred.disappear();
 			//boutonSuiv.disappear();
 			//creation et apparition de winamp
-			Winamp winampComponent = new Winamp("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
+			WinampInstance winampComponent = new WinampInstance("WinampComponent", null, buttonAgents, agentsConnectionToUPnP, c);
 			
 			winampComponent.getServiceAgentList().get(0);
 			ServiceAgent.setPile(pile);

@@ -17,36 +17,39 @@ import implementationSMA.enumeration.MessageType;
 import implementationSMA.messages.AbstractMessage;
 import implementationSMA.messages.ServiceAgentMessage;
 
-public class ImpressInstance extends InstanceAgent {
-	/**
-	 * Création d'une instance du composant Impress qui requiert deux interfaces
-	 * (agents services) qui sont des boutons et fournit une interface
-	 * (affichage du numéro de la page actuelle)
-	 */
-	// pour le test
-	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
+/**
+ * Ce composant a 4 interfaces: nous avons l'interface:
+ * 
+ * @winPredButton: le bouton precedent
+ * @winSuivButton: le bouton suivant
+ * @winIncreaseVolumeButton : le bouton permettant d'augmenter le volume
+ * @winDecreseVolumeButton: le bouton permettant de diminuer le volume
+ * @author amahamat
+ *
+ */
 
+public class WinampInstance extends InstanceAgent {
+
+	private int nbAgents;
+	private String idServiceAgent;
+	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
 	private ArrayList<OnRemovedListener> onRemovedListeners;
-	private int nbAgents = 0;
-	// private ArrayList<ServiceAgent> serviceAgentList = new
-	// ArrayList<ServiceAgent>();
-	/**
-	 * 
-	 * @param id
-	 * @param routage
-	 */
-	public ImpressInstance(String id, Routage routage, HashSet<ServiceAgent> hashSet,
+
+	private AgentsConnectionToUPnP agentsConnectionToUPnP;
+
+	public WinampInstance(String id, Routage routage, HashSet<ServiceAgent> hashSet,
 			AgentsConnectionToUPnP agentsConnectionToUPnP, ContainerWComp container) {
 		super(id, routage, agentsConnectionToUPnP, container);
-		// TODO Auto-generated constructor stub
 		this.id = id;
 		this.routage = routage;
-		this.type = "ImpressJ";
-		this.createImpressAgents();
+		this.type = "ButtonInstance";
+		this.idServiceAgent = idServiceAgent;
 		this.hashSet = hashSet;
-		// this.agentsConnectionToUPnP = agentsConnectionToUPnP;
-		// this.container = container;
+		this.createWinampButtonsAgents();
+		this.agentsConnectionToUPnP = agentsConnectionToUPnP;
+		this.nbAgents = 0;
 		this.onRemovedListeners = new ArrayList<>();
+
 	}
 
 	public ContainerWComp getContainer() {
@@ -60,19 +63,28 @@ public class ImpressInstance extends InstanceAgent {
 	/**
 	 * 
 	 */
-	private void createImpressAgents() {
+	private void createWinampButtonsAgents() {
 		// TODO Auto-generated method stub
-		// on peut supprimer les variables locaux. Ils sont la juste pour la
-		// lisisbilité du code
-		nbAgents++;
-		ServiceAgent prevSlideRequired = new ServiceAgent("@"+this.id + nbAgents, this, 1, this.hashSet, "Click",
-				"Previous", InterfaceType.REQUIRED);
-		nbAgents++;
-		ServiceAgent nextSlideRequired = new ServiceAgent("@"+this.id + nbAgents, this, 1, this.hashSet, "Click", "Next",
+		this.nbAgents++;
+		ServiceAgent winPredButton = new ServiceAgent("@winPrev"+this.id + nbAgents, this, 1, this.hashSet, "Click", "PreviousSong",
 				InterfaceType.REQUIRED);
+		
+		nbAgents++;
+		ServiceAgent winSuivButton = new ServiceAgent("@winSui"+ this.id + nbAgents, this, 1, this.hashSet, "Click", "NextSong",
+				InterfaceType.REQUIRED);
+		
+		nbAgents++;
+		ServiceAgent winIncreaseVolumeButton = new ServiceAgent("@winIncVol"+this.id + nbAgents, this, 1, this.hashSet, "Click",
+				"VolumeUp", InterfaceType.REQUIRED);
+		nbAgents++;
+		ServiceAgent winDecreseVolumeButton = new ServiceAgent("@winDecVol"+this.id + nbAgents, this, 1, this.hashSet, "Click",
+				"VolumeDown", InterfaceType.REQUIRED);
+		// a creer prochainement les boutons volumes
 
-		this.serviceAgents.add(prevSlideRequired);
-		this.serviceAgents.add(nextSlideRequired);
+		this.serviceAgents.add(winPredButton);
+		this.serviceAgents.add(winSuivButton);
+		/*this.serviceAgents.add(winIncreaseVolumeButton);
+		this.serviceAgents.add(winDecreseVolumeButton);*/
 
 	}
 
@@ -84,6 +96,10 @@ public class ImpressInstance extends InstanceAgent {
 		return this.serviceAgents;
 	}
 
+	/**
+	 * 
+	 * @param serviceAgentsHashSet
+	 */
 	public void setReceiverSAList(HashSet<ServiceAgent> serviceAgentsHashSet) {
 		this.hashSet = serviceAgentsHashSet;
 		// mettre à jour des agents devant recevoir l'annonce
@@ -93,6 +109,7 @@ public class ImpressInstance extends InstanceAgent {
 
 	}
 
+	
 	public void addOnRemovedListener(OnRemovedListener o) {
 		this.onRemovedListeners.add(o);
 	}
@@ -101,16 +118,17 @@ public class ImpressInstance extends InstanceAgent {
 		this.onRemovedListeners.remove(o);
 	}
 
+	
 	public void destroy() {
 		this.disappear();
 		for (OnRemovedListener listener : onRemovedListeners)
 			listener.onRemoved(this);
 	}
-
+	
 	public String getInstanceName() {
-		return "ImpressInstance";
+		return "WinampInstance";
 	}
-
+	
 	public boolean disappear() {
 
 		/**

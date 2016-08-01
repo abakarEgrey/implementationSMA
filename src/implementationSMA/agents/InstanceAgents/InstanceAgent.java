@@ -2,6 +2,7 @@ package implementationSMA.agents.InstanceAgents;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import com.irit.upnp.ContainerWComp;
 import fr.irit.smac.libs.tooling.messaging.AgentMessaging;
 import fr.irit.smac.libs.tooling.messaging.IMsgBox;
 import fr.irit.smac.libs.tooling.messaging.impl.Ref;
+import implementationSMA.OnRemovedListener;
 import implementationSMA.Pair;
 import implementationSMA.agents.Agent;
 import implementationSMA.agents.AgentsConnectionToUPnP;
@@ -33,6 +35,9 @@ public class InstanceAgent extends Agent {
 
 	protected AgentsConnectionToUPnP agentsConnectionToUPnP;
 	protected ContainerWComp container;
+	
+	//Bean name
+	private String  beanName;
 
 	// Constructor1
 	public InstanceAgent(String id, Routage routage) {
@@ -67,8 +72,17 @@ public class InstanceAgent extends Agent {
 
 	// Accessor
 
+	
 	public int getCountIdContextAgents() {
 		return countIdContextAgents;
+	}
+
+	public String getBeanName() {
+		return beanName;
+	}
+
+	public void setBeanName(String beanName) {
+		this.beanName = beanName;
 	}
 
 	public AgentsConnectionToUPnP getAgentsConnectionToUPnP() {
@@ -299,5 +313,18 @@ public class InstanceAgent extends Agent {
 			}
 		}
 		return neighBours;
+	}
+	
+	public String getInstanceName() {
+		return "InstanceAgent";
+	}
+
+	public void setReceiverSAList(HashSet<ServiceAgent> impressDestinationAgents) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void destroy() {
+		
 	}
 }

@@ -24,12 +24,13 @@ public class ButtonInstance extends InstanceAgent {
 	/**
 	 * l'id est le nom de l'instance
 	 */
+	private static int nbButton = 0;
 	private String idServiceAgent;
 	// pour le test
 	private HashSet<ServiceAgent> hashSet = new HashSet<ServiceAgent>();
 
 	private AgentsConnectionToUPnP agentsConnectionToUPnP;
-	
+
 	private ArrayList<OnRemovedListener> onRemovedListeners;
 
 	/**
@@ -69,14 +70,15 @@ public class ButtonInstance extends InstanceAgent {
 		// TODO Auto-generated method stub
 		// un peu en dur. A changer pour rendre plus generique
 		ServiceAgent button;
-		if (this.idServiceAgent.equals("prevButton")) {
-			button = new ServiceAgent("@" + this.idServiceAgent, this, 1, this.hashSet, "Click", "Previous",
+		
+		if ((nbButton % 2 == 0)){
+			button = new ServiceAgent("@" + this.id, this, 1, this.hashSet, "Click", "Previous",
 					InterfaceType.PROVIDED);
 		} else {
-			button = new ServiceAgent("@" + this.idServiceAgent, this, 1, this.hashSet, "Click", "Next",
+			button = new ServiceAgent("@" + this.id, this, 1, this.hashSet, "Click", "Next",
 					InterfaceType.PROVIDED);
 		}
-
+		nbButton++;
 		this.serviceAgents.add(button);
 		// besoin pour le test: chaque bouton envoie une annonce aux interfaces
 		// de ImpressJ
@@ -130,7 +132,8 @@ public class ButtonInstance extends InstanceAgent {
 			list += "]";
 			System.out.println("sA.getConnectedAgents() = " + list + " " + sA.getId());
 			if (!sA.getConnectedAgents().isEmpty()) {
-				seDeconnecter(sA);
+				//seDeconnecter(sA);
+				sA.seDeconnecter();
 				// vider la liste des agents connectés
 				sA.getConnectedAgents().clear();
 				// changer son etat
@@ -186,24 +189,22 @@ public class ButtonInstance extends InstanceAgent {
 		}
 
 	}
-	
-	public void addOnRemovedListener(OnRemovedListener o)
-	{
+
+	public void addOnRemovedListener(OnRemovedListener o) {
 		this.onRemovedListeners.add(o);
 	}
-	
-	public void removeOnRemovedListener(OnRemovedListener o)
-	{
+
+	public void removeOnRemovedListener(OnRemovedListener o) {
 		this.onRemovedListeners.remove(o);
 	}
-	
-	public void destroy()
-	{
+
+	public void destroy() {
 		this.disappear();
-		for(OnRemovedListener listener : onRemovedListeners)
+		for (OnRemovedListener listener : onRemovedListeners)
 			listener.onRemoved(this);
 	}
-	
-	
 
+	public String getInstanceName() {
+		return "ButtonInstance";
+	}
 }
